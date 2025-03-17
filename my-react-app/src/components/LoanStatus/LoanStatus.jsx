@@ -100,7 +100,7 @@ const LoanStatus = () => {
       setError("");
       // Update the URL to use the applicationNo route
       const response = await axios.get(
-        `http://localhost:8800/api/rout/application/${applicationNo}`
+        `https://loanok-paras-projects-90370c3a.vercel.app/api/rout/application/${applicationNo}`
       );
       
       setLoan(response.data);

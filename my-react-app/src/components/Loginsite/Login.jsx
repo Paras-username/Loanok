@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx"; // Importing hamburger icon
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
@@ -29,19 +30,19 @@ const Login = () => {
       {/* Dropdown Menu */}
       {menuOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg border">
-          <a
-            href="/loanstatus"
-            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-          >
-            My Application Status
-          </a>
-          <button
-            onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-            className="w-full font-medium text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
-          >
-            Logout
-          </button>
-        </div>
+        <Link
+          to="/loanstatus"
+          className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+        >
+          My Application Status
+        </Link>
+        <button
+          onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+          className="w-full font-medium text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+        >
+          Logout
+        </button>
+      </div>
       )}
     </div>
   );
