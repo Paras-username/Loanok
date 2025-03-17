@@ -1,108 +1,123 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
 const Works = () => {
+  // Animation variants for steps
+  const stepVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
+  };
+
+  // Animation variants for video
+  const videoVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100, delay: 0.5 } },
+  };
+
+  // Staggered animation for steps
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  // Intersection observer for animations
+  const [ref, inView] = useInView({ triggerOnce: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <div className="relative pb-5 sm:pb-20 bg-gradient-to-r from-[#ffffff] via-white to-[#ffffff]">
-      {/* Heading Section */}
+    <div className="bg-gradient-to-br from-white-50 to-green-50 py-16">
       <div className="pt-1 text-2xl font-bold text-center sm:pt-4 sm:text-base md:pt-10 md:text-5xl">
         <span className="text-blue-800">Get Your Loan in</span>{" "}
         <span className="text-green-800">4 Easy Steps</span>
       </div>
       <div className="mt-2 text-m font-bold text-center text-blue-900 sm:mt-4 sm:text-sm md:mt-5 md:text-3xl">
         Instant{" "}
-        <span className="border p-1 bg-green-700 text-white sm:p-2">
+        <span className="border p-1 bg-gradient-to-r from-green-600 to-green-800 text-white sm:p-2 rounded-lg">
           Loan
         </span>{" "}
         Anywhere, Anytime.
       </div>
 
-      {/* Image Section */}
-      <div className="absolute hidden sm:block w-[150px] h-[120px] bottom-0 right-0 mb-16 mr-8 sm:w-[250px] sm:h-[200px] sm:mb-24 sm:mr-12 md:w-[500px] md:h-[400px] md:mb-16 md:mr-48">
-  <img
-    src="/girl.png"
-    alt="Flexible EMIs"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute top-0 left-0 w-[50px] h-[60px] ml-2 sm:w-[90px] sm:h-[120px] sm:ml-6 md:w-[150px] md:h-[190px] md:ml-16">
-    <img
-      src="/rupe.png"
-      alt="Flexible EMIs"
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
+      <div className="flex flex-col-reverse md:flex-row items-center md:items-start mt-12 px-4 py-8 md:px-10 lg:px-24">
+        {/* Steps Section */}
+        <motion.div
+          className="w-full md:w-1/2 space-y-6"
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+        >
+          {[
+            {
+              icon: "/Login.png",
+              title: "Step 1: Sign Up & Login",
+              description: "Visit the LoanOK website and create an account or log in.",
+            },
+            {
+              icon: "/calling1.png",
+              title: "Step 2: Get Expert Consultation",
+              description: "Connect with our loan advisors for personalized guidance.",
+            },
+            {
+              icon: "/Apply.png",
+              title: "Step 3: Apply for a Loan",
+              description: "Choose the best loan option and submit your application.",
+            },
+            {
+              icon: "/Mark.png",
+              title: "Step 4: Track Your Application",
+              description: "Monitor your loan status with your application number.",
+            },
+          ].map((step, index) => (
+            <motion.div
+              key={index}
+              className="flex items-center md:items-start bg-white p-4 rounded-xl border-2 border-transparent hover:border-gradient-to-r hover:from-blue-500 hover:to-green-500 shadow-md hover:shadow-lg transition-all duration-300"
+              variants={stepVariants}
+              whileHover={{ scale: 1.05 }}
+            >
+              <img
+                src={step.icon}
+                alt={step.title}
+                className="w-12 h-12 md:w-16 md:h-16"
+              />
+              <div className="ml-4">
+                <h3 className="text-lg font-semibold md:text-xl text-blue-900">{step.title}</h3>
+                <p className="text-sm text-gray-600 md:text-lg">{step.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-
-      {/* Steps Section */}
-      <div className="flex flex-col space-y-4 pt-4 sm:space-y-6 sm:pt-6 md:space-y-10 md:pl-24">
-        {/* Step 1 */}
-        <div className="flex items-start sm:items-center sm:flex-col md:flex-row">
-          <img
-            src="/Login.png"
-            alt="Login"
-            className="w-[40px] h-[50px] sm:w-[50px] sm:h-[60px] md:w-[70px] md:h-[80px]"
-          />
-          <div className="pl-2 sm:mt-10 sm:pl-0 sm:pt-2 md:pl-4">
-            <div className="text-sm font-semibold sm:text-base md:text-2xl">
-              Step-1:- Visit Our Website
-            </div>
-            <h1 className="text-xs font-serif text-blue-800 sm:text-sm md:text-lg">
-              {`we'll`} assist you quickly!
-            </h1>
+        {/* Video Section */}
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center items-center md:justify-end"
+          variants={videoVariants}
+          initial="hidden"
+          animate={controls}
+        >
+          <div className="relative w-[300px] h-[600px] sm:w-[400px] sm:h-[400px] md:w-[300px] md:h-[600px] lg:w-[650px] lg:h-[500px]">
+            <video
+              src="/workedit.mp4"
+              className="w-full h-full object-contain "
+              autoPlay
+              
+              muted
+            />
           </div>
-        </div>
-
-        {/* Step 2 */}
-        <div className="flex items-start  sm:items-center sm:flex-col md:flex-row ">
-          <img
-            src="/calling1.png"
-            alt="Consultation"
-            className="w-[40px] h-[50px] sm:w-[50px] sm:h-[60px] md:w-[70px] md:h-[80px]"
-          />
-          <div className="pl-2 sm:pl-0 sm:pt-2 md:pl-4">
-            <div className="text-sm font-semibold sm:text-base md:text-2xl">
-              Step-2:- Get Expert Consultation Over a Call
-            </div>
-            <h1 className="text-xs font-serif text-blue-800 sm:text-sm md:text-lg">
-              Schedule a call, and our team will promptly assist you!!
-            </h1>
-          </div>
-        </div>
-
-        {/* Step 3 */}
-        <div className="flex items-start sm:items-center sm:flex-col md:flex-row">
-          <img
-            src="/Apply.png"
-            alt="Apply"
-            className="w-[40px] h-[50px] sm:w-[50px] sm:h-[60px] md:w-[70px] md:h-[80px]"
-          />
-          <div className="pl-2 sm:pl-0 sm:pt-2 md:pl-4">
-            <div className="text-sm font-semibold sm:text-base md:text-2xl">
-              Step-3:- Apply For a Loan
-            </div>
-            <h1 className="text-xs font-serif text-blue-800 sm:text-sm md:text-lg">
-              Submit your application & unlock the best interest rates
-            </h1>
-          </div>
-        </div>
-
-        {/* Step 4 */}
-        <div className="flex items-start sm:items-center sm:flex-col md:flex-row">
-          <img
-            src="/Mark.png"
-            alt="Approval"
-            className="w-[40px] h-[50px] sm:w-[50px] sm:h-[60px] md:w-[70px] md:h-[80px]"
-          />
-          <div className="pl-2 sm:pl-0 sm:pt-2 md:pl-4">
-            <div className="text-sm font-semibold sm:text-base md:text-2xl">
-              Step-4:- Get Instant Loan Approval
-            </div>
-            <h1 className="text-xs font-serif text-blue-800 sm:text-sm md:text-lg">
-              Quick bank approval after loan submission.
-            </h1>
-          </div>
-        </div>
+        </motion.div>
       </div>
-
-      
     </div>
   );
 };

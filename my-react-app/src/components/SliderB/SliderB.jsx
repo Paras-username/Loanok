@@ -7,14 +7,14 @@ const Slider = () => {
       title: "Corporate Loans",
       description:
         "A corporate loan is a financial product provided to businesses for funding operations, expansion, or working capital. It helps cover expenses like raw materials, asset purchases, and daily costs. Businesses must meet specific eligibility requirements to qualify.",
-      image: "https://i.pinimg.com/736x/df/67/33/df673320a8232d33f0860fba97263228.jpg",
+      image: "corp.jpeg",
       link: "/corporateloan",
     },
     {
       title: "MSME Loans",
       description:
         "MSME loans are crucial for fostering entrepreneurship and innovation, which are vital for economic growth. By providing financial assistance, MSME loans help small businesses overcome financial barriers, allowing them to invest in technology, infrastructure, and human resources.",
-      image: "https://www.wusme.org/wp-content/uploads/2022/04/website-visual-survey-SMEs-2-842x474.png ",
+      image: "msmepic.png ",
       link: "/msmeloan",
     },
   ];
@@ -43,7 +43,7 @@ const Slider = () => {
 
   return (
     <div className="p-10">
-        <div className="relative w-full h-screen overflow-hidden bg-black">
+        <div className="relative w-full h-screen max-w-7xl mx-auto overflow-hidden bg-black rounded-2xl border border-white/10">
       {items.map((item, index) => (
         <div
           key={index}
@@ -53,8 +53,8 @@ const Slider = () => {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url(${item.image})`,
-            }}
+              backgroundImage:`url(${item.image})` }}
+            
           />
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative z-20 h-full flex items-center justify-center">
@@ -96,6 +96,7 @@ const Slider = () => {
             className={`w-3 h-3 rounded-full transition-colors duration-300
               ${currentIndex === index ? "bg-white" : "bg-white/50 hover:bg-white/70"}`}
             aria-label={`Go to slide ${index + 1}`}
+
           />
         ))}
       </div>

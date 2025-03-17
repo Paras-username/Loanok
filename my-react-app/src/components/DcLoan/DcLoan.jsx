@@ -1,98 +1,163 @@
 import PropTypes from "prop-types";
 import LoanForm from "../LoanForm/LoanForm";
+import { FiShield } from "react-icons/fi";
+
 import { useState } from 'react';
-import Bank from "../Bank/Bank";
-import Form from "../../Form/Form";
-const DcLoan = ({name}) => {
+import { RiBankFill } from "react-icons/ri"; // Low-Interest Credit Cards
+import { HiCurrencyRupee } from "react-icons/hi2"; // Personal Loans
+import { FaRepeat } from "react-icons/fa6"; // Balance Transfer Cards
+import { AiFillHome } from "react-icons/ai"; // Home Equity Line of Credit (HELOC)
+import { FaClipboardList } from "react-icons/fa"; // Debt Management Plans
+import { FaRegCreditCard } from "react-icons/fa"; // Debt Consolidation Loans
+import { IoBarChartSharp } from "react-icons/io5";  // 📊 (Bar Chart)
+import { LiaPercentageSolid } from "react-icons/lia";  // 💰 (Money with Wings)
+import { PiChartLineUpLight } from "react-icons/pi";  // 📈 (Chart Increasing)
+import { FaShieldAlt } from "react-icons/fa";  // 🛡️ (Shield)
+import { GiMoneyStack } from "react-icons/gi";
+import Dataform from "../Dataform/Dataform";
+import Carousel from "../Carousel/Carousel";
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
 
- const handleModalToggle = () => {
-    setIsModalOpen(!isModalOpen); // Toggle the modal visibility
+const SectionContainer = ({ children, className = "" }) => (
+  <div className={`bg-white p-8 rounded-2xl shadow-sm border border-white ${className}`}>
+    {children}
+  </div>
+);
+
+const BenefitItem = ({ icon: Icon, title, description }) => (
+  <div className="flex items-start">
+    <div className="bg-sky-100 p-3 rounded-lg mr-4">
+      <Icon className="text-sky-600 text-xl" />
+    </div>
+    <div>
+      <h3 className="font-semibold text-gray-800">{title}</h3>
+      <p className="text-gray-600 text-sm mt-1">{description}</p>
+    </div>
+  </div>
+);
+
+const LoanTypeItem = ({ icon: Icon, title, description }) => (
+  <div className="p-4 border rounded-xl hover:bg-emerald-50 transition-all duration-300">
+    <div className="flex items-center mb-2">
+      <Icon className="text-emerald-600 mr-2 text-xl" />
+      <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+    </div>
+    <p className="text-gray-600 text-sm">{description}</p>
+  </div>
+);
+
+const Instance = ({ name }) => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalToggle = () => {
+    setIsModalOpen(!isModalOpen);
   };
-
-
-
+  
 
   return (
-    <div className="mb-16">
-        <div className=" relative bg-[url('/Loans.png')] bg-contain bg-no-repeat bg-[left_600px_top_20px] px-4 sm:px-6 md:px-8 lg:px-16">
-      <div className="flex mt-10">
-        <div className="bg-blue-800 border p-2 px-5 text-2xl font-bold text-white">
-          Debt Consolidation Loan
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row mt-5 text-lg">
-        {/* Paragraph Section */}
-        <div className="pr-0 md:pr-32 lg:pr-[370px]">
-          <p>
-          Debt consolidation is a financial strategy that involves combining multiple outstanding debts into a single loan or credit line. This
- process simplifies debt management by consolidating various loans, such as credit card balances, personal loans, and other
- financial obligations, into one. By doing so, it allows borrowers to make a single monthly payment instead of juggling multiple
- payments with varying interest rates and due dates. This approach can be particularly helpful for individuals struggling to manage
- multiple debts or looking to streamline their repayment process.
-          </p>
-
-          <p className="mt-10">
-          The main goal of debt consolidation is to reduce financial stress, lower interest rates, and provide a more manageable repayment
- plan. Depending on the borrower’s creditworthiness, consolidation options can include personal loans, balance transfer credit cards,
- or home equity loans. With a well-structured consolidation plan, individuals can regain control over their finances and work towards
- becoming debt-free more efficiently
-          </p>
+    <div className="mb-16 bg-gradient-to-b from-sky-50 to-emerald-50">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-16">
+        {/* Hero Section */}
+        <div className="mt-10 bg-[linear-gradient(to_right,#2e0089,#84fffb)] rounded-2xl p-8 text-white shadow-xl text-center">
+          <h1 className="text-2xl sm:text-4xl font-bold mb-4">
+            Simplify Debt with Consolidation Loans
+          </h1>
         </div>
 
-        {/* Box Section */}
-        <div className="">
-              {/* Directly include LoanForm without passing name prop */}
-            <LoanForm name={name}/>
+        {/* Main Content */}
+        <div className="flex flex-col lg:flex-row gap-8 mt-8">
+
+          <div className="flex-1 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                      <h2 className="text-2xl font-bold text-emerald-800 flex items-center mb-10">
+                        <GiMoneyStack className="mr-2 text-emerald-600 text-3xl" />
+                        Debt Consolidation Loan
+                      </h2>
+                      <p className="text-gray-700 leading-relaxed mb-8">
+                      Debt consolidation combines multiple debts into a single loan, simplifying repayment by reducing the number of payments and interest rates. It helps borrowers manage finances better, lower interest costs, and create a more manageable payment plan.
+                      </p>
+                      <button
+                        onClick={handleModalToggle}
+                        className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white px-5 py-2 rounded-full shadow-lg font-bold transform transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
+                      >
+                        Apply Now
+                      </button>
+                    </div>
+          
+                    {/* Image Section */}
+                    <div className="flex-1 flex justify-center items-center">
+                      <img
+                        src="debtgirl.png"
+                        alt="Personal Loan Illustration"
+                        className="w-full max-w-xl lg:max-w-2xl h-auto rounded-2xl shadow-sm"
+                      />
+                    </div>
+                  </div>
+          
+           
+            
+
+            <SectionContainer className="mt-10">
+              <h2 className="text-2xl font-bold text-emerald-800 mb-6">
+                Ways to Consolidate Debt
+              </h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {loanTypes.map((type, index) => (
+                  <LoanTypeItem key={`loan-type-${index}`} {...type} />
+                ))}
+              </div>
+            </SectionContainer>
+
+            <SectionContainer className="mt-10">
+              <h2 className="text-2xl font-bold text-emerald-800 mb-6">
+              Advantages of Debt Consolidation
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {benefits.map((benefit, index) => (
+                  <BenefitItem key={`benefit-${index}`} {...benefit} />
+                ))}
+              </div>
+            </SectionContainer>
+            
           </div>
+          {isModalOpen && <Dataform onClose={handleModalToggle}/>}
+          <div className="py-10"><Carousel/></div>
+          
         </div>
 
-      <div className="flex ml-5 mt-12">
-        <div 
-        onClick={handleModalToggle} // Toggle modal on click
-        className="bg-green-700 hover:bg-green-800 border p-2 px-5 text-lg font-bold text-white">
-          Apply Now
-        </div>
-      </div>
-    </div>
-    <div className="px-4 sm:px-6 md:px-8 lg:px-16">
-        <p className=" border text-2xl font-bold w-fit mt-36 p-3 px-6 bg-blue-800 text-white">How To Consolidate Loan</p>
-        <ul className="list-disc pl-5 mt-14 text-xl font-normal">
-            <li className="mt-6"> <span className="font-bold text-2xl">Personal Loans:</span> Often a popular choice due to lower interest rates. You can use the loan to pay off existing debts and focus on repaying a
-            single loan with a fixed rate.</li>
-            <li className="mt-6"> <span className="font-bold text-2xl">Balance Transfer Credit Cards: </span> Transfer outstanding balances to a credit card offering a low or 0% introductory interest rate, saving on
-            interest if paid within the promotional period</li>
-            <li className="mt-6"> <span className="font-bold text-2xl">Home Equity Lines of Credit: </span> Leverage your home’s equity to pay off debts, though this involves using your home as collateral</li>
-            <li className="mt-6"> <span className="font-bold text-2xl">Debt Management Plans or Settlement: </span>Alternative options requiring careful consideration due to potential risks and impacts on credit.</li>
-        </ul>
-        <p className="text-3xl font-semibold mt-10"> Benefits of Debt Consolidation:</p>
-        <ul className="list-disc pl-5 mt-10 ml-5 text-xl font-normal">
-        <li className="mt-5"> <span className="font-bold text-2xl"> Simplified Finances:  </span>Replace multiple payments with a single one for easier budgeting.</li>
-        <li className="mt-5"> <span className="font-bold text-2xl"> Lower Interest Rates:  </span> Potentially reduce the overall cost of repayment..</li>
-        <li className="mt-5"> <span className="font-bold text-2xl"> Credit Score Improvement:  </span>Timely payments on a consolidated loan can boost your credit over time.</li>
-        <li className="mt-5"> <span className="font-bold text-2xl"> Unsecured Options:   </span>Personal loans don’t require collateral, simplifying the application process.</li>
-        </ul>
-      <p className="text-3xl font-semibold mt-10">How Debt Consolidation Loans Work:</p>
-      <ul className="text-xl font-normal mt-10">
-      <li className="mt-5"> <span className="font-bold text-2xl"> Personal Loans: </span> Borrow an amount equal to your debts, pay them off, and repay the consolidated
-      loan in fixed installments.</li>
-      <li className="mt-5"> <span className="font-bold text-2xl"> Balance Transfer Credit Cards:  </span> Consolidate multiple card payments into one by transferring balances and repaying
-      during the low-interest period</li>
-      <li className="mt-5"> <span className="font-bold text-2xl"> Home Equity Loans: </span> Use the funds to clear debts and repay over time, backed by your
-      home’s equity.</li>
-        
-      </ul>
-    </div>
-    <Bank/>
-    <Form isOpen={isModalOpen} onClose={handleModalToggle} />
-      
-    </div>
-  )
+       
+    
+  
+  );
 };
-DcLoan.propTypes = {
+
+const loanTypes = [
+  { icon: RiBankFill, title: "Low-Interest Credit Cards",
+    description: "Transfer existing balances to credit cards with 0% intro rates for significant interest savings." },
+  { icon: HiCurrencyRupee, title: "Personal Loans",
+    description: "Pay off multiple outstanding debts with a single loan at a fixed lower interest rate." },
+  { icon: FaRepeat, title: "Balance Transfer Cards",
+    description: "Shift high-interest balances to lower-rate credit cards to reduce monthly financial burdens." },
+  { icon: AiFillHome, title: "Home Equity Line of Credit (HELOC)",
+    description: "Use home equity as collateral to consolidate debt with lower interest and potential tax benefits." },
+  { icon: FaClipboardList, title: "Debt Management Plans",
+    description: "Work with professional financial agencies to negotiate reduced interest rates and structured plans." },
+  { icon: FaRegCreditCard, title: "Debt Consolidation Loans",
+    description: "Combine multiple debts into a structured loan with fixed payments for better financial management." }
+];
+
+const benefits = [
+  { icon: IoBarChartSharp, title: "Simplified Financial Management",
+    description: "Merge multiple debts into one manageable payment, making budgeting easier and reducing overall financial stress." },
+  { icon: LiaPercentageSolid, title: "Lower Interest Costs",
+    description: "Consolidate high-interest debts into a single loan with lower rates, saving money on overall repayment over time." },
+  { icon: PiChartLineUpLight, title: "Improved Credit Score",
+    description: "Regular, timely payments on a consolidated loan help boost your credit score and enhance future borrowing options." },
+  { icon: FaShieldAlt, title: "No Collateral Requirement",
+    description: "Unsecured consolidation loans allow you to repay debt without risking personal assets or property as collateral." }
+];
+Instance.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default DcLoan
+export default Instance;

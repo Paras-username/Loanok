@@ -1,7 +1,89 @@
+// import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
+// import Form from "../../Form/Form";
+// import WordRotate from "../WordRotate/WordRotate";
+
+// const Home = () => {
+//   const navigate = useNavigate();
+//   const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
+
+//   const handleNavigate = () => {
+//     navigate("/works"); // Replace with your desired path
+//   };
+
+//   const handleModalToggle = () => {
+//     setIsModalOpen(!isModalOpen); // Toggle the modal visibility
+//   };
+
+//   return (
+//     <div className="px-1 flex flex-col overflow-x-hidden">
+//       {/* Main Container */}
+//       <div className="px-4 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-8 sm:gap-12 w-full max-w-8xl">
+
+//       <div className="px-14 flex-1 space-y-6 sm:space-y-4 flex flex-col items-center text-center sm:items-start sm:text-left">
+//   <div>
+//     <WordRotate
+//       words={["Trusted Partners", "Simple Process", "Quick Loans"]}
+//       className="text-xl sm:text-3xl font-bold mt-8 text-green-700"
+//     />
+
+//     <h1 className="text-3xl font-bold sm:text-5xl mt-4 text-black-900">
+//       Loans Made Easy
+//     </h1>
+//     <h1 className="text-3xl font-bold sm:text-5xl mt-4 text-blue-900">
+//       Approval Made Fast
+//     </h1>
+//   </div>
+
+//   <p className="pt-2 sm:pt-5 text-sm font-semibold text-gray-700 leading-relaxed w-full max-w-[400px]">
+//     Transparent loans, competitive rates, expert guidance. Quick, reliable solutions for all your financial goals.
+//   </p>
+
+//   {/* Buttons */}
+//   <div className="flex flex-col sm:flex-row gap-4 mt-4 sm:pb-14 ">
+//     <button
+//       onClick={handleModalToggle}
+//       className="sm:mt-4 p-3 px-6 sm:p-4 sm:px-8 font-medium text-white bg-blue-700 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+//     >
+//       Apply Now!
+//     </button>
+//     <button
+//       onClick={handleNavigate}
+//       className="sm:mt-4 p-3 px-6 sm:p-4 sm:px-8 text-white font-medium bg-blue-700 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+//     >
+//       How it works
+//     </button>
+//   </div>
+// </div>
+
+
+ 
+//   <div className="flex-1 flex justify-center">
+//     <img
+//       src="/girlpurple.png"
+//       alt="Loan Illustration"
+//       className="w-[320px] h-[280px] sm:w-[540px] sm:h-[600px] object-contain rounded-2xl shadow-sm"
+//     />
+// </div>
+
+// </div>
+
+
+
+//       {/* Modal Form */}
+//       <Form isOpen={isModalOpen} onClose={handleModalToggle} />
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Form from "../../Form/Form";
+
 import WordRotate from "../WordRotate/WordRotate";
+import Dataform from "../Dataform/Dataform";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -16,61 +98,56 @@ const Home = () => {
   };
 
   return (
-    <div className="px-1 flex flex-col bg-gradient-to-r from-[#ffffff] via-white to-[#ffffff] overflow-x-hidden">
+    <div className="px-1 mt-10 flex flex-col overflow-x-hidden">
       {/* Main Container */}
-      <div
-        className="flex flex-col items-center text-center mt-16 sm:bg-[url('/Home_girl.png')] sm:bg-contain sm:bg-[left_400px_top_10px] md:bg-[left_900px_top_30px] sm:bg-no-repeat sm:min-h-[425px] w-full"
-      >
-        
+      <div className="px-4 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-8 sm:gap-12 w-full max-w-8xl">
+        <div className="px-24 flex-1 space-y-6 sm:space-y-4 flex flex-col items-center text-center sm:items-start sm:text-left">
+          <div>
+            <WordRotate
+              words={["Trusted Partners", "Simple Process", "Quick Loans"]}
+              className="text-xl sm:text-3xl font-bold mt-8 text-green-700"
+            />
+            <h1 className="text-3xl font-bold sm:text-5xl mt-4 text-black-900">
+              Loans Made Easy
+            </h1>
+            <h1 className="text-3xl font-bold sm:text-5xl mt-4 text-blue-900">
+              Approval Made Fast
+            </h1>
+          </div>
 
-        {/* New Text Above Animated Text */}
-        <div className="flex flex-col items-center text-center w-full">
-          <h1 className="text-2xl font-bold sm:text-4xl">
-            <span className="text-blue-900">Loans Made Easy</span> - Approval Made Fast!
-          </h1>
+          <p className="pt-2 sm:pt-5 text-sm font-semibold text-gray-700 leading-relaxed w-full max-w-[400px]">
+            Transparent loans, competitive rates, expert guidance. Quick,
+            reliable solutions for all your financial goals.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-4 sm:pb-14">
+            <button
+              onClick={handleModalToggle}
+              className="sm:mt-4 p-3 px-6 sm:p-4 sm:px-8 font-medium text-white bg-blue-700 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+            >
+              Apply Now!
+            </button>
+            <button
+              onClick={handleNavigate}
+              className="sm:mt-4 p-3 px-6 sm:p-4 sm:px-8 text-white font-medium bg-blue-700 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+            >
+              How it works
+            </button>
+          </div>
         </div>
 
-        {/* Animated Word Rotate */}
-        <WordRotate
-          words={["Trusted Partners ", "Simple Process", "Quick Loans"]}
-          className="text-2xl sm:text-4xl font-bold mt-6 text-green-700"
-        />
-
-        {/* Added New Paragraph Below Animated Words */}
-        <div className="p-3 mt-6 bg-gray-100 rounded-md shadow-md text-center flex flex-col items-center" style={{ width: '420px' }}>
-
-
-  <p className="text-base font-semibold text-black-800 mb-1">
-    Quick Approvals & Competitive Rates!
-  </p>
-  <p className="text-sm font-normal text-gray-700 mb-1">
-    Explore a wide range of loan options—personal, home, business, or education. Our secure platform offers{" "}
-    <span className="font-bold">24/7 access</span>, <span className="font-bold">full transparency</span>, and{" "}
-    <span className="font-bold">no hidden charges</span>.
-  </p>
-  <p className="text-sm font-normal text-gray-700">
-    Use tools like our <span className="text-black-500 font-bold">Loan EMI Calculator</span> and expert guidance to make smarter financial decisions.
-  </p>
-</div>
-
-
-
-        <div className="flex flex-col gap-y-5 md:flex-row md:space-x-8 pt-4 text-basic mt-4 font-bold">
-          <div
-            onClick={handleModalToggle}
-            className="cursor-pointer p-2 px-3 font-bold bg-white text-blue-800 border-2 shadow-md shadow-slate-500 transition ease-out hover:bg-blue-800 hover:text-white hover:border-blue-500"
-          >
-            Apply Now!
-          </div>
-          <div className="p-2 px-3 text-white border-2 border-blue-800 hover:border-white bg-blue-800">
-            <button onClick={handleNavigate}>How it works</button>
-          </div>
+        <div className="flex-1 flex justify-center">
+          <img
+            src="/girlpurple.png"
+            alt="Loan Illustration"
+            className="w-[320px] h-[280px] sm:w-[500px] sm:h-[500px] object-cover rounded-2xl shadow-sm"
+          />
         </div>
       </div>
 
-      
-
-      <Form isOpen={isModalOpen} onClose={handleModalToggle} />
+      {/* Modal Form */}
+      {isModalOpen && <Dataform onClose={handleModalToggle} />}
     </div>
   );
 };

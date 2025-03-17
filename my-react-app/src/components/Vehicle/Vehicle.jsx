@@ -1,94 +1,203 @@
-import PropTypes from "prop-types"
-import LoanForm from "../LoanForm/LoanForm";
-import { useState } from 'react';
-import Bank from "../Bank/Bank";
-import Form from "../../Form/Form";
+import PropTypes from "prop-types";
+import { useState } from "react";
+import { IoDocumentAttach } from "react-icons/io5";
+import { GiScooter } from "react-icons/gi";
+import { FaCarAlt, FaTaxi, FaTruck, FaTractor, FaCar } from "react-icons/fa";
+import { MdElectricCar, MdCalendarMonth } from "react-icons/md";
+import { TbMoneybag } from "react-icons/tb";
+import { FaCreativeCommonsZero } from "react-icons/fa";
+import { BsGraphUp } from "react-icons/bs";
+import Dataform from "../Dataform/Dataform";
+import Carousel from "../Carousel/Carousel";
 
-const Vehicle = ({name}) => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
+const Instance = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
- const handleModalToggle = () => {
-    setIsModalOpen(!isModalOpen); // Toggle the modal visibility
+  const handleModalToggle = () => {
+    setIsModalOpen(!isModalOpen);
   };
+  const loanTypes = [
+    {
+      icon: GiScooter,
+      title: "Two-Wheeler Loan",
+      description: "Financing for motorcycles, scooters, and e-bikes with flexible repayment terms.",
+    },
+    {
+      icon: FaCarAlt,
+      title: "New Car Loan",
+      description: "Loan for purchasing brand-new cars, including electric vehicles (EVs).",
+    },
+    {
+      icon: FaTaxi,
+      title: "Resale Car Loan",
+      description: "Financing for pre-owned cars with competitive interest rates.",
+    },
+    {
+      icon: MdElectricCar,
+      title: "Electric Vehicle Loan",
+      description: "Specialized loans for eco-friendly electric vehicles.",
+    },
+    {
+      icon: FaTruck,
+      title: "Commercial Vehicle Loan",
+      description: "Financing for business vehicles like trucks and vans.",
+    },
+    {
+      icon: FaTractor,
+      title: "Tractor Loan",
+      description: "Loans for agricultural equipment with flexible terms.",
+    },
+  ];
 
-
+  const benefits = [
+    {
+      icon: MdCalendarMonth,
+      title: "Flexible Tenures",
+      description: "Repayment options from 1 to 7 years to suit your budget.",
+    },
+    {
+      icon: TbMoneybag,
+      title: "High Funding",
+      description: "Get up to 100% financing for selected models.",
+    },
+    {
+      icon: FaCar,
+      title: "Used Vehicles",
+      description: "Competitive rates for quality pre-owned vehicles.",
+    },
+    {
+      icon: BsGraphUp,
+      title: "Better Rates",
+      description: "Lower interest rates for good credit scores (750+).",
+    },
+    {
+      icon: FaCreativeCommonsZero,
+      title: "Zero Down Payment",
+      description: "Special schemes with no upfront payment required.",
+    },
+    {
+      icon: IoDocumentAttach,
+      title: "Tax Benefits",
+      description: "Claim interest as business expense for commercial vehicles.",
+    },
+  ];
 
   return (
-    <div className="mb-16">
-        <div className="relative bg-[url('/Loans.png')] bg-contain bg-no-repeat bg-[left_600px_top_20px] px-4 sm:px-6 md:px-8 lg:px-16">
-      <div className="flex mt-10">
-        <div className="bg-blue-800 border p-2 px-5 text-2xl font-bold text-white">
-          Vehicle Loan
-        </div>
-      </div>
+    <div className="mb-16 bg-gradient-to-b from-sky-50 to-emerald-50">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-16">
+        {/* Hero Section */}
+        <div className="mt-10 bg-[linear-gradient(to_right,#18390b,#c99a5b)] rounded-2xl p-8 text-white shadow-xl">
+          <h1 className="text-2xl font-bold mb-4 sm:text-4xl sm:font-bold sm:mb-4 text-center">
+            Vehicle Loan - Ab Har Safar Apna Hoga
+          </h1>
 
-      <div className="flex flex-col md:flex-row mt-5 text-lg">
-        {/* Paragraph Section */}
-        <div className="pr-0 md:pr-32 lg:pr-[370px]">
-          <p>
-          A Vehicle Loan is a loan that allows you to purchase two and four wheelers for personal use. Typically, the lender
- loans the money (making a direct payment to the dealer on the buyer’s behalf) while the buyer must repay the loan
- in Equated Monthly Instalments (EMIs) over a specific tenure at a specific interest rate. The EMI comprises a
- portion of the principal amount and the interest component. Once you repay the loan in full, the lender transfers the
- vehicle registration in your name. <br />
- You can also apply for a Vehicle Loan to buy these vehicles to transport goods or company personnel. Common
- examples of commercial vehicles include buses, trucks, tractors, tippers, cabs, etc.
-          </p>
-
-          <p className="mt-10">
-          Your eligibility for a Vehicle Loan depends on your credit score and net (in hand) monthly income. Most lenders
-        offer 75% to 100% of the vehicles on-road price, based on its type and price. You can also get a loan to buy pre
-        owned cars and other previously used vehicles.
-          </p>
         </div>
 
-        {/* Box Section */}
-        <div className="">
-              {/* Directly include LoanForm without passing name prop */}
-            <LoanForm  name={name}/>
+        {/* Main Content */}
+        <div className="flex flex-wrap-reverse justify-center sm:flex sm:flex-wrap sm:justify-center">
+          <div className="flex flex-col sm:flex-row items-center gap-12 mt-8 w-full max-w-8xl">
+            {/* Loan Description Section */}
+            <div className="flex-1 bg-white p-8 rounded-2xl shadow-sm border border-white space-y-4">
+              <h2 className="text-2xl font-bold text-emerald-800 flex items-center">
+                <FaCar className="mr-2 text-emerald-600" />
+                Vehicle Financing
+              </h2>
+              <p className="text-gray-700 leading-relaxed">
+                Get flexible financing solutions for new and pre-owned vehicles. Our loans cover cars, 
+                bikes, commercial vehicles, and agricultural equipment with competitive interest rates 
+                and repayment tenures up to 7 years. Enjoy quick approvals, high loan-to-value ratios, 
+                and special schemes for electric vehicles.
+              </p>
+              <button
+              onClick={handleModalToggle}
+              className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white px-5 py-2 rounded-full shadow-lg font-bold transform transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
+            >
+              Apply Now
+            </button>
+            </div>
+
+            {/* Image Section */}
+            <div className="flex-1 flex justify-center">
+              <img
+                src="cargirl.png"
+                alt="Vehicle Loan Illustration"
+                className="max-w-full h-auto rounded-2xl shadow-sm"
+              />
+            </div>
           </div>
         </div>
 
-      <div className="flex ml-5 mt-12">
-        <div 
-        onClick={handleModalToggle} // Toggle modal on click
-        className="bg-green-700 hover:bg-green-800 border p-2 px-5 text-lg font-bold text-white">
-          Apply Now
+        {/* Loan Types Section */}
+        <div className="flex flex-col lg:flex-row gap-8 mt-8">
+          <div className="flex-1 space-y-8">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-white">
+              <h2 className="text-2xl font-bold text-emerald-800 mb-6">Vehicle Loan Options</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {loanTypes.map((type, index) => (
+                  <div key={index} className="p-4 border rounded-xl hover:bg-emerald-50 transition-all duration-300">
+                    <div className="flex items-center mb-2">
+                      <type.icon className="text-emerald-600 mr-2 text-xl" />
+                      <h3 className="text-lg font-semibold text-gray-800">{type.title}</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm">{type.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Benefits Section */}
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-white">
+              <h2 className="text-2xl font-bold text-emerald-800 mb-6">Why Choose Our Vehicle Loans?</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="bg-sky-100 p-3 rounded-lg mr-4">
+                      <benefit.icon className="text-sky-600 text-xl" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">{benefit.title}</h3>
+                      <p className="text-gray-600 text-sm mt-1">{benefit.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* Floating Apply Button */}
+        {/* <div className="fixed bottom-6 right-6 z-50">
+          <button
+            onClick={handleModalToggle}
+            className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white px-8 py-4 rounded-full shadow-lg font-bold transform transition-all hover:scale-105 active:scale-95"
+            aria-label="Apply for vehicle loan"
+          >
+            Apply Now
+          </button>
+        </div> */}
+
+        {/* Loan Form Modal */}
+        {/* {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white p-8 rounded-2xl w-full max-w-lg relative">
+              <button
+                onClick={handleModalToggle}
+                className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-2xl"
+              >
+                &times;
+              </button>
+            </div>
+          </div>
+        )} */}
       </div>
+      {isModalOpen && <Dataform onClose={handleModalToggle} />}
+      <div className="py-10"><Carousel/></div>
     </div>
-    <div className="px-4 sm:px-6 md:px-8 lg:px-16">
-        <p className=" border text-3xl font-semibold w-fit mt-36 p-3 bg-blue-800 text-white">Types of Vehicle Loans in India:        </p>
-        <p className="mt-14 text-xl font-normal"> <span className="font-bold text-2xl">Two-Wheeler Loans:</span> For purchasing motorcycles, scooters, or e-bikes. Often have lower loan amounts
-        and shorter repayment tenures. Targeted at individuals in urban and rural areas.</p>
-        <p className="mt-10 text-xl font-normal"> <span className="font-bold text-2xl">New Car Loans: </span> For financing brand-new cars, including sedans, hatchbacks, SUVs, and electric
- vehicles. Loans typically cover 80–100% of the on-road price of the car. Flexible repayment tenures
- ranging from 1 to 7 years.</p>
-        <p className="mt-10 text-xl font-normal"> <span className="font-bold text-2xl">Used Car Loans (Pre-Owned Vehicle Loans):</span>   For purchasing second-hand cars. Loan amounts depend
- on the car’s valuation, age, and condition. Interest rates are generally higher than new car loans due to
- greater risk.</p>
- <p className="mt-10 text-xl font-normal"> <span className="font-bold text-2xl"> Commercial Vehicle Loans: </span>  Designed for purchasing vehicles used for business purposes, such as
- trucks, buses, or vans. Popular among transport operators, logistics companies, and businesses. Loans
- may cover chassis, custom-built bodies, or even electric commercial vehicles</p>
- <p className="mt-10 text-xl font-normal"> <span className="font-bold text-2xl"> Electric Vehicle (EV) Loans: </span> Specifically for financing electric two-wheelers, cars, or commercial
- vehicles. Some banks and NBFCs offer preferential interest rates to promote green mobility.</p>
-
- <p className="mt-10 text-xl font-normal"> <span className="font-bold text-2xl"> Tractor and Agricultural Vehicle Loans: </span>  Tailored for farmers to purchase tractors, harvesters, and other
- agricultural vehicles. Typically offered with subsidized rates under government schemes.</p>
-
- <p className="mt-10 text-xl font-normal"> <span className="font-bold text-2xl">  Loan Against Vehicle:  </span>  Allows individuals to borrow money by pledging their existing vehicle as
- collateral. Suitable for urgent financial needs with flexible repayment terms.
-</p>
- 
-    </div>
-    <Bank/>
-    <Form isOpen={isModalOpen} onClose={handleModalToggle} />
-      
-    </div>
-  )
+  );
 };
-Vehicle.propTypes = {
+
+Instance.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default Vehicle
+export default Instance;

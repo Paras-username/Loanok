@@ -1,159 +1,177 @@
-import LoanForm from "../LoanForm/LoanForm";
 import PropTypes from "prop-types";
-import { useState } from "react";
-import Form from "../../Form/Form";
-import { FileUpload } from "../../FileUpload/FileUpload"; // Updated import path
+import LoanForm from "../LoanForm/LoanForm";
+import { useState } from 'react';
+import { SiHomeassistantcommunitystore } from "react-icons/si";
+import { BiSolidPurchaseTag } from "react-icons/bi";
+import { MdConstruction } from "react-icons/md";
+import { TbHomeSpark } from "react-icons/tb";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
+import { MdExtension } from "react-icons/md";
+import { TbHome2 } from "react-icons/tb";
+import { PiSealPercentFill, PiPhoneCallFill } from "react-icons/pi";
+import { FaFastForward, FaAngleDoubleUp } from "react-icons/fa";
+import Dataform from "../Dataform/Dataform";
+import Carousel from "../Carousel/Carousel";
 
-const HousingLoan = ({ name }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
+const LoanCard = ({ icon: Icon, title, description }) => (
+  <div className="p-6 border rounded-xl hover:bg-gradient-to-br from-sky-50 to-emerald-50 transition-all duration-300 transform hover:scale-[1.02] cursor-pointer group relative overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-emerald-600/10 opacity-0 group-hover:opacity-100 transition-all"></div>
+    <div className="flex items-center mb-4">
+      <div className="bg-gradient-to-r from-blue-600 to-emerald-600 p-3 rounded-lg mr-4">
+        <Icon className="text-white text-2xl" />
+      </div>
+      <h3 className="text-lg font-semibold">
+        <span className="text-black">{title.split(" - ")[0]}</span>{" "}
+        <span className="text-blue-600">- {title.split(" - ")[1]}</span>
+      </h3>
+    </div>
+    <p className="text-gray-600 text-sm">{description}</p>
+  </div>
+);
 
-  const handleModalToggle = () => {
-    setIsModalOpen(!isModalOpen); // Toggle the modal visibility
+const BenefitCard = ({ icon: Icon, title, description }) => (
+  <div className="flex items-start p-6 border rounded-xl hover:bg-gradient-to-br from-sky-50 to-emerald-50 transition-all duration-300 transform hover:scale-[1.02] cursor-pointer relative overflow-hidden">
+    <div className="bg-gradient-to-r from-blue-600 to-emerald-600 p-3 rounded-lg mr-4">
+      <Icon className="text-white text-2xl" />
+    </div>
+    <div>
+      <h3 className="font-semibold text-gray-800">{title}</h3>
+      <p className="text-gray-600 text-sm mt-1">{description}</p>
+    </div>
+  </div>
+);
+
+const Instance = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+ const handleModalToggle = () => {
+    setIsModalOpen(!isModalOpen);
   };
 
   return (
-    <div className="mb-16">
-      <div className="relative bg-[url('/Loans.png')] bg-no-repeat bg-[left_650px_top_10px] bg-[length:700px_500px] px-4 sm:px-6 md:px-8 lg:px-16">
+    <div className="mb-16 bg-gradient-to-b from-sky-50 to-emerald-50 px-4 sm:px-6 md:px-8 lg:px-16">
+      {/* Hero Section */}
+      <div className="mt-10 bg-gradient-to-r from-blue-900 to-blue-600 rounded-2xl p-8 text-white shadow-2xl text-center transform hover:scale-[1.02] transition-all duration-300 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-cover opacity-10"></div>
+        <h1 className="text-2xl font-bold sm:text-4xl">Babumoshai, Ghar Bada Hona Chaheye - Home Loan Process Nahi</h1>
+        <p className="text-lg text-gray-200 max-w-2xl mx-auto mt-4">
+          Get your dream home with our hassle-free home loan solutions.
+        </p>
+        <button 
+          onClick={handleModalToggle} 
+          className="mt-6 bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-6 py-2 rounded-full shadow-lg font-bold transform hover:scale-105 transition-all"
+        >
+          Apply Now
+        </button>
+      </div>
 
-        <div className="flex mt-10">
-          <div className="bg-blue-800 border p-2 px-5 text-2xl font-bold text-white">
-            Housing Loan
+      {/* Content Section */}
+      <div className="flex flex-col lg:flex-row gap-8 mt-8">
+        <div className="flex-1 space-y-8">
+          {/* Housing Loan Section */}
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            <div className="flex flex-col sm:flex-row items-center gap-12">
+              {/* Text Content */}
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-emerald-800 flex items-center">
+                  <SiHomeassistantcommunitystore className="mr-2 text-emerald-600 text-3xl" />
+                  Housing Loan
+                </h2>
+                <p className="text-gray-700 leading-relaxed mt-4">
+                  A home loan is a secured loan from banks or NBFCs to help individuals buy property, 
+                  with the property as collateral. It offers significant funding, competitive rates, 
+                  and long repayment terms. Borrowers repay through EMIs, and ownership is transferred 
+                  once the loan is fully repaid. With rising property prices, home loans are popular 
+                  in India, offering fixed, floating, or hybrid rate options based on borrower preferences.
+                </p>
+              </div>
+
+              {/* Image Section */}
+              <div className="flex-1 flex justify-center items-start">
+                <img
+                  src="housinggirl.png"
+                  alt="Housing Loan Illustration"
+                  className="w-full max-w-[500px] h-auto rounded-2xl shadow-sm object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-col md:flex-row mt-5 text-lg">
-          {/* Paragraph Section */}
-          <div className="pr-0 md:pr-32 lg:pr-[370px]">
-            <p>
-              A home loan is a secured financial product provided by banks,
-              financial institutions, and Non-Banking Financial Companies
-              (NBFCs) to help individuals purchase residential properties. The
-              purchased property serves as collateral for the loan. Home loans
-              offer substantial funding, competitive interest rates, and long
-              repayment tenures, making them an attractive option for aspiring
-              homeowners. Borrowers repay the loan through Equated Monthly
-              Installments (EMIs), and once the loan is fully repaid, ownership
-              of the property is transferred back to them.
-            </p>
-
-            <p className="mt-10">
-              In India, home loans have become increasingly popular due to
-              rising property prices and the demand for affordable housing.
-              Borrowers can choose from fixed-rate, floating-rate, or hybrid
-              home loans to meet their financial requirements.
-            </p>
+          {/* Types of Home Loans */}
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            <h2 className="text-2xl font-bold mb-6">
+              <span className="text-black">Types of Home Loans </span>
+              <span className="text-blue-600">Based on Purpose</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {loanTypes.map((type, index) => (
+                <LoanCard key={index} {...type} />
+              ))}
+            </div>
           </div>
 
-          {/* Box Section */}
-          <div className="">
-            {/* Directly include LoanForm without passing name prop */}
-            <LoanForm name={name} />
+          {/* Benefits Section */}
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            <h2 className="text-2xl font-bold text-emerald-800 mb-6">Why Choose Us for Your Home Loan?</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {benefits.map((benefit, index) => (
+                <BenefitCard key={index} {...benefit} />
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="flex ml-5 mt-12">
-          <div
-            onClick={handleModalToggle} // Toggle modal on click
-            className="bg-green-700 hover:bg-green-800 border p-2 px-5 text-lg font-bold text-white"
-          >
-            Apply Now
-          </div>
-        </div>
-
-        {/* Add FileUpload Component */}
-        <div className="mt-20 ml-5">
-          <FileUpload
-            onChange={(files) => {
-              console.log("Uploaded files:", files);
-            }}
-          />
         </div>
       </div>
 
-      <div className="mt-40 flex justify-center px-4 sm:px-6 md:px-8 lg:px-16">
-        <p className="text-3xl font-semibold text-white border w-fit bg-green-700 p-3 px-6">
-          Types of Home Loans Based on Purpose
-        </p>
-      </div>
+      {/* Floating Apply Button */}
+      {/* <div className="fixed bottom-6 right-6 z-50">
+        <button 
+          onClick={toggleModal} 
+          className="bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-8 py-4 rounded-full shadow-lg font-bold transform hover:scale-105 flex items-center gap-2"
+        >
+          <PiPhoneCallFill className="text-xl" /> Apply Now
+        </button>
+      </div> */}
 
-      <div className="px-4 sm:px-6 md:px-8 lg:px-16">
-        <p className="text-2xl mt-20 font-semibold w-fit bg-blue-800 text-white p-2 px-4">
-          Land Purchase Loan
-        </p>
-        <p className="text-xl mt-4">
-          Found the perfect plot for your dream home? A land purchase loan helps
-          you secure the ideal location with ease. With competitive rates, fast
-          approvals, and customized repayment terms, this loan lays the
-          foundation for turning your vision into reality.
-        </p>
-        <p className="text-2xl mt-16 font-semibold w-fit bg-blue-800 text-white p-2 px-4">
-          Home Construction Loan
-        </p>
-        <p className="text-xl mt-4">
-          Planning to build your dream home? A home construction loan provides
-          financial support to cover construction costs. With low interest
-          rates, flexible disbursement options, and customized repayment plans,
-          this loan ensures you can build your home step by step without
-          compromising on quality or timelines.
-        </p>
-        <p className="text-2xl mt-16 font-semibold w-fit bg-blue-800 text-white p-2 px-4">
-          Home Renovation Loan
-        </p>
-        <p className="text-xl mt-4">
-          Modernize or repair your living space with a home renovation loan.
-          Whether you are updating interiors or addressing essential repairs,
-          this loan covers all renovation expenses. Enjoy attractive interest
-          rates, quick approvals, and flexible repayment options to transform
-          your home into a more stylish and functional space.
-        </p>
-        <p className="text-2xl mt-16 font-semibold w-fit bg-blue-800 text-white p-2 px-4">
-          Home Loan Balance Transfer
-        </p>
-        <p className="text-xl mt-4">
-          Reduce your financial burden with a home loan balance transfer. By
-          transferring your existing loan to a new lender, you can benefit from
-          lower interest rates, reduced EMIs, and better terms, saving on costs
-          and aligning with your financial goals.
-        </p>
-        <p className="text-2xl mt-16 font-semibold w-fit bg-blue-800 text-white p-2 px-4">
-          Home Extension Loan
-        </p>
-        <p className="text-xl mt-4">
-          Need more space in your current home? A home extension loan helps you
-          expand your living area or add new rooms. With affordable interest
-          rates, seamless disbursement, and flexible tenures, this loan enables
-          you to enhance your home's functionality while staying within budget.
-        </p>
-        <p className="text-2xl mt-16 font-semibold w-fit bg-blue-800 text-white p-2 px-4">
-          Basic Home Loan
-        </p>
-        <p className="text-xl mt-4">
-          A basic home loan is designed to help individuals achieve their dream
-          of homeownership. It features competitive interest rates, flexible
-          repayment options, and tailored solutions for both first-time buyers
-          and those upgrading their homes. With streamlined processing and
-          attractive terms, this loan simplifies the path to owning your dream
-          home.
-        </p>
-        <p className="text-2xl mt-16 font-semibold w-fit bg-blue-800 text-white p-2 px-4">
-          Joint Home Loan
-        </p>
-        <p className="text-xl mt-4">
-          Share the financial responsibility and increase your loan eligibility
-          with a joint home loan. Co-borrow with a family member or spouse to
-          access higher loan amounts and enjoy tax benefits. It's a practical
-          solution for purchasing your dream home while sharing ownership and
-          repayment duties.
-        </p>
-      </div>
+      {/* Loan Form Modal */}
+      {/* {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-2xl w-full max-w-lg relative">
+            <button
+             
+          onClick={handleModalToggle}
 
-      <Form isOpen={isModalOpen} onClose={handleModalToggle} />
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-2xl"
+            >
+              &times;
+            </button>
+          </div>
+         
+        </div>
+        
+      )} */}
+       {isModalOpen && <Dataform onClose={handleModalToggle}/>}
+       <div className="py-10"><Carousel/></div>
     </div>
   );
 };
 
-HousingLoan.propTypes = {
-  name: PropTypes.string.isRequired,
-};
+const loanTypes = [
+  { icon: BiSolidPurchaseTag, title: "Land Purchase Loan - Secure Your Ideal Plot", description: "A land purchase loan helps you acquire the perfect location for your dream home." },
+  { icon: MdConstruction, title: "Home Construction Loan - Build Your Dream Home", description: "Financially support your construction project with low-interest rates." },
+  { icon: TbHomeSpark, title: "Home Renovation Loan - Transform Your Space", description: "Update your living space with quick approvals and flexible repayment options." },
+  { icon: FaMoneyBillTransfer, title: "Home Loan Balance Transfer - Switch and Save", description: "Transfer your home loan for lower interest rates and reduced EMIs." },
+  { icon: MdExtension, title: "Home Extension Loan - Expand Your Home", description: "Add space to your home with an affordable home extension loan." },
+  { icon: TbHome2, title: "Basic Home Loan - Your Dream Home, Made Easy", description: "Simplify homeownership with competitive rates and flexible repayment plans." },
+];
 
-export default HousingLoan;
+const benefits = [
+  { icon: PiSealPercentFill, title: "Quick Processing", description: "Fast approvals with minimal paperwork." },
+  { icon: FaFastForward, title: "Low Interest Rates", description: "Competitive rates with affordable EMIs." },
+  { icon: FaAngleDoubleUp, title: "High Loan Amount", description: "Substantial funding for your dream home." },
+  { icon: PiPhoneCallFill, title: "Customer Support", description: "Personalized assistance at every step." },
+];
+
+Instance.propTypes = { name: PropTypes.string.isRequired };
+
+export default Instance;

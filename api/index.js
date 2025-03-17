@@ -1,27 +1,29 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config();
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import cors from "cors";
+import loanRoute from "./routes/loanroutes.js";
 
 const app = express();
-const PORT = 3001;
+dotenv.config();
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(cors());
 
-// MongoDB connection URI from environment variables
-const MONGO_URI = process.env.MONGO;
+const connect = async () => {
+  try{
+    await mongoose.connect(process.env.MONGO);
+    console.log("connected to mongodb");
+  }
+  catch(error){
+    throw error;
+  }
+};
 
-// Connect to MongoDB without deprecated options
-mongoose
-  .connect(MONGO_URI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error('Error connecting to MongoDB:', err));
+app.use("/api/rout", loanRoute);
 
-// Basic route
-app.get('/', (req, res) => res.send('Hello from the Express server!'));
-
-// Start the server
-app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
+app.listen(8800, ()=>{
+  connect()
+  console.log("connected to backend");
+})

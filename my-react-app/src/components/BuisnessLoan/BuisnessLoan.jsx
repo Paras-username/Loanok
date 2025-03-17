@@ -1,71 +1,70 @@
 import PropTypes from "prop-types";
 import { useState } from 'react';
-import LoanForm from "../LoanForm/LoanForm";
-import Bank from "../Bank/Bank";
-import SliderB from "../SliderB/SliderB";
-import Form from "../../Form/Form";
+import { RiBuilding2Line } from "react-icons/ri";
+// import LoanForm from "../LoanForm/LoanForm";
 
-const BuisnessLoan = ({ name }) => {
+import SliderB from "../SliderB/SliderB";
+
+import Dataform from "../Dataform/Dataform";
+import Carousel from "../Carousel/Carousel";
+
+const BuisnessLoan = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
 
- const handleModalToggle = () => {
+  const handleModalToggle = () => {
     setIsModalOpen(!isModalOpen); // Toggle the modal visibility
   };
 
 
   return (
     <div className="mb-16">
-      <div className=" relative bg-[url('/Loans.png')] bg-contain bg-no-repeat bg-[left_520px_top_20px]  px-4 sm:px-6 md:px-8 lg:px-16">
-        <div className="flex mt-10">
-          <div className="bg-blue-800 border p-2 px-5 text-2xl font-bold text-white">
-            Business Loan
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row mt-5 text-lg">
-          {/* Paragraph Section */}
-          <div className="pr-0 md:pr-32 lg:pr-[370px]">
-            <p>
-              In today’s dynamic world, whether you are an aspiring entrepreneur or a business owner looking to scale, working capital
-              is essential. At LoanOK, we are committed to supporting your journey, offering a range of instant business loans to help
-              you start, grow, or expand your business.
-            </p>
-
-            <p className="mt-10">
-              Our MSME Loans are specifically designed to support the growth of small and medium enterprises. With a streamlined
-              application process, quick approvals, and prompt disbursals, these loans are crafted to minimize hassle. Additionally,
-              they offer competitive interest rates and flexible repayment options, allowing you to focus on growing your business
-              without the stress of financial concerns.
-            </p>
-
-            <p className="mt-10">
-              For example, you could apply for a loan of ₹5,00,000 at an interest rate of 12% annually, with a repayment tenure of 36
-              months. Your monthly EMI would be around ₹17,600. Alternatively, a loan of ₹10,00,000 at the same interest rate and
-              tenure would result in an EMI of ₹35,200.
-            </p>
+      <div className="pb-5">
+        <div className="px-4 sm:px-6 md:px-8 lg:px-16">
+          {/* Hero Section */}
+          <div className="mt-10 bg-gradient-to-r from-[#05378d] to-[#cf8136] rounded-2xl p-8 text-white shadow-2xl">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center ">
+            Vyaapar Ki Lo Udaan, Safalta Ho Tumhara Pehchaan
+            </h1>
           </div>
 
-          {/* Box Section */}
-          <div className="">
-              {/* Directly include LoanForm without passing name prop */}
-            <LoanForm  name={name}/>
-          </div>
-        </div>
+          {/* Main Content */}
+          <div className="flex flex-col lg:flex-row gap-12 mt-12">
+            {/* Loan Description Section */}
+            <div className="flex-1 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <h2 className="text-2xl font-bold text-emerald-800 flex items-center mb-6">
+                <RiBuilding2Line className="mr-2 text-emerald-600 text-3xl" />
+                Business Loan
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-8">
+              A business loan is a financial product that provides funding to businesses for various purposes, such as expansion, working capital, equipment purchase, or operational costs. It can be secured (requiring collateral) or unsecured and is repaid with interest over a fixed tenure.
 
-        <div className="flex ml-5 mt-6">
-          <div 
-          onClick={handleModalToggle} // Toggle modal on click
-          className="bg-green-700 hover:bg-green-800 border p-2 px-5 text-lg font-bold text-white">
-            Apply Now
+
+              </p>
+              <button
+                onClick={handleModalToggle}
+                className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white px-5 py-2 rounded-full shadow-lg font-bold transform transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
+              >
+                Apply Now
+              </button>
+            </div>
+
+            {/* Image Section */}
+            <div className="flex-1 flex justify-center items-center">
+              <img
+                src="businessmen.png"
+                alt="Personal Loan Illustration"
+                className="w-full max-w-xl lg:max-w-2xl h-auto rounded-2xl shadow-sm"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="text-center text-5xl font-medium mt-20">Other Business Loans</div>
-      <Form isOpen={isModalOpen} onClose={handleModalToggle} />
+       {isModalOpen && <Dataform onClose={handleModalToggle} />}
       <SliderB />
-      <Bank />
+     
+      <div className="py-10"><Carousel/></div>
     </div>
   );
 };

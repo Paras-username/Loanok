@@ -1,111 +1,196 @@
-import PropTypes from "prop-types"
-import LoanForm from "../LoanForm/LoanForm"
+import PropTypes from "prop-types";
+// import LoanForm from "../LoanForm/LoanForm";
+// import { FiShield } from "react-icons/fi";
+import { FaBriefcase } from "react-icons/fa6";
 import { useState } from 'react';
-import Bank from "../Bank/Bank";
-import Form from "../../Form/Form";
+import { FaCalendarCheck } from "react-icons/fa";
+import { FaCreditCard } from "react-icons/fa";
+import { FaTools } from "react-icons/fa";
+import { FaBuildingShield } from "react-icons/fa6";
+import { FaShoppingCart } from "react-icons/fa";
+import { RiMoneyRupeeCircleFill } from "react-icons/ri";
+import { FaFileAlt } from "react-icons/fa";
+import { PiFileMagnifyingGlassFill } from "react-icons/pi"
+import { FaCheckCircle } from "react-icons/fa";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
+import { FaWallet } from "react-icons/fa";
+import { FaFlagCheckered } from "react-icons/fa6";
+import Dataform from "../Dataform/Dataform";
+import Carousel from "../Carousel/Carousel";
 
-const CoperateLoan = ({name}) => {
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
+const Instance = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
- const handleModalToggle = () => {
-    setIsModalOpen(!isModalOpen); // Toggle the modal visibility
+  const handleModalToggle = () => {
+    setIsModalOpen(!isModalOpen);
   };
 
-
-
   return (
-    <div className="mb-16">
-        <div className=" relative bg-[url('/Loans.png')] bg-contain bg-no-repeat bg-[left_500px_top_15px] px-4 sm:px-6 md:px-8 lg:px-16">
-      <div className="flex mt-10">
-        <div className="bg-blue-800 border p-2 px-5 text-2xl font-bold text-white">
-          Corporate Loan
+    <div className="mb-16 bg-gradient-to-b from-sky-50 to-emerald-50">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-16">
+         {/* Hero Section */}
+         <div className="mt-10 bg-[linear-gradient(to_right,#083e86,#ffde59)] rounded-2xl p-8 text-white shadow-xl flex justify-center text-center">
+          <h1 className="text-2xl font-bold mb-4 sm:text-4xl sm:font-bold sm:mb-4">
+          Karobar Bade, Sapne Saakaar – Corporate Loan Se Ho Aap Taiyaar!
+          </h1>
         </div>
-      </div>
+        
 
-      <div className="flex flex-col md:flex-row mt-5 text-lg">
-        {/* Paragraph Section */}
-        <div className="pr-0 md:pr-32 lg:pr-[370px]">
-          <p>
-          In today’s dynamic world, whether you are an aspiring entrepreneur or a business owner looking to scale, working
- capital is essential. At LoanOK, we are committed to supporting your journey, offering a range of instant business loans
- to help you start, grow, or expand your business.
-          </p>
+        {/* Main Content */}
+        <div className="flex flex-col lg:flex-row gap-8 mt-8">
+          {/* Content Section */}
+          <div className="flex-1 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                      <h2 className="text-2xl font-bold text-emerald-800 flex items-center mb-10">
+                        <FaBriefcase className="mr-2 text-emerald-600 text-3xl" />
+                        Corporate Loan
+                      </h2>
+                      <p className="text-gray-700 leading-relaxed mb-8">
+                      A corporate loan  is designed to meet the financial needs of large businesses. Offered by banks, financial institutions, and NBFCs, these loans provide higher amounts than regular business loans. They can be used for purposes like expansion, infrastructure, working capital, or equipment financing. Typically secured with collateral, corporate loans offer flexible repayment terms, competitive interest rates, and customized solutions to fit the unique needs of businesses.
+                      </p>
+                      <button
+                        onClick={handleModalToggle}
+                        className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white px-5 py-2 rounded-full shadow-lg font-bold transform transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
+                      >
+                        Apply Now
+                      </button>
+                    </div>
+          
+                    {/* Image Section */}
+                    <div className="flex-1 flex justify-center items-center">
+                      <img
+                        src="corpman.png"
+                        alt="Personal Loan Illustration"
+                        className="w-full max-w-xl lg:max-w-2xl h-auto rounded-2xl shadow-sm"
+                      />
+                    </div>
+                  </div>
 
-          <p className="mt-10">
-          Our MSME Loans are specifically designed to support the growth of small and medium enterprises. With a
- streamlined application process, quick approvals, and prompt disbursals, these loans are crafted to minimize hassle.
- Additionally, they offer competitive interest rates and flexible repayment options, allowing you to focus on growing
- your business without the stress of financial concerns.
-          </p>
+            {/* Loan Types Section */}
+            <div className="bg-white p-8 mt-10 rounded-2xl shadow-sm border border-white">
+              <h2 className="text-2xl font-bold text-emerald-800 mb-6">Celebrate Love Without Financial Worries</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {loanTypes.map((type, index) => (
+                  <div key={index} className="p-4 border rounded-xl hover:bg-emerald-50 transition-all duration-300">
+                    <div className="flex items-center mb-2">
+                      <type.icon className="text-emerald-600 mr-2 text-xl" />
+                      <h3 className="text-lg font-semibold text-gray-800">{type.title}</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm">{type.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-          <p className="mt-10">
-          For example, you could apply for a loan of ₹5,00,000 at an interest rate of 12% annually, with a repayment tenure of 36
- months. Your monthly EMI would be around ₹17,600. Alternatively, a loan of ₹10,00,000 at the same interest rate and
- tenure would result in an EMI of ₹35,200.
-          </p>
-        </div>
+            {/* Benefits Section */}
+            <div className="bg-white p-8 rounded-2xl mt-8 shadow-sm border border-white">
+              <h2 className="text-2xl font-bold text-emerald-800 mb-6">How Does a Corporate Loan Work?</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-start">
+                  <div className="bg-sky-100 p-3 rounded-lg mr-4">
+                    <FaFileAlt className="text-sky-600 text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Application</h3>
+                    <p className="text-gray-600 text-sm mt-1">Businesses submit a loan application detailing their financial history, plans, and use of funds.
 
-        {/* Box Section */}
-        <div className="">
-              {/* Directly include LoanForm without passing name prop */}
-            <LoanForm name={name}/>
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-sky-100 p-3 rounded-lg mr-4">
+                    <PiFileMagnifyingGlassFill className="text-sky-600 text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Underwriting</h3>
+                    <p className="text-gray-600 text-sm mt-1">Lenders assess the borrower’s creditworthiness by evaluating financials, flow, collateral.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-sky-100 p-3 rounded-lg mr-4">
+                    <FaCheckCircle className="text-sky-600 text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Approval</h3>
+                    <p className="text-gray-600 text-sm mt-1"> Based on the borrower’s financial health and risk profile, the lender approves the loan.
+
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-sky-100 p-3 rounded-lg mr-4">
+                    <FaMoneyBillTransfer className="text-sky-600 text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Disbursement</h3>
+                    <p className="text-gray-600 text-sm mt-1"> Funds are disbursed as a lump sum or in instalments based on the {"loan's"} purpose.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-sky-100 p-3 rounded-lg mr-4">
+                    <FaWallet className="text-sky-600 text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Repayment</h3>
+                    <p className="text-gray-600 text-sm mt-1"> Borrowers repay the loan through instalments (principal + interest) as per the schedule.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-sky-100 p-3 rounded-lg mr-4">
+                    <FaFlagCheckered className="text-sky-600 text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">Completion</h3>
+                    <p className="text-gray-600 text-sm mt-1">Upon full repayment, the loan agreement concludes, and the borrower fulfills their obligations.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+           {isModalOpen && <Dataform onClose={handleModalToggle} />}
+
+           <div className="py-10"><Carousel/></div>
         </div>
 
-      <div className="flex ml-5 mt-12">
-        <div 
-        onClick={handleModalToggle} // Toggle modal on click
-        className="bg-green-700 hover:bg-green-800 border p-2 px-5 text-lg font-bold text-white">
-          Apply Now
-        </div>
-      </div>
-    </div>
-    <div className="px-4 sm:px-6 md:px-8 lg:px-16">
-        <p className=" border text-2xl font-bold w-fit mt-36 p-3 px-6 bg-blue-800 text-white">Types of Corporate Loans:</p>
-        <p className="mt-10 text-xl font-normal"> <span className="font-bold text-2xl">Term Loans: </span> Lump-sum loans repaid over a fixed tenure, ideal for long-term investments like
-        expansion or asset acquisition.</p>
-        <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl"> Business Line of Credit: </span>  Provides access to funds up to a maximum limit, with interest charged only on
-        the amount utilized.
- ranging from 1 to 7 years.</p>
-        <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl">Equipment Loans:</span>   Specifically for purchasing machinery or equipment, often using the equipment as
-        collateral.</p>
- <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl">Invoice Financing: </span>  Advances funds against pending invoices to improve cash flow.</p>
- <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl">Merchant Cash Advances: </span>Short-term funding repaid through a percentage of future sales proceeds.</p>
-
- <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl">  Commercial Mortgages:  </span>  Used to purchase or refinance business properties, with the property serving as
- collateral. Working Capital Loans: Short-term loans to manage daily operational costs.
-</p>
-
-    </div>
-
-    <div className="px-4 sm:px-6 md:px-8 lg:px-16">
-        <p className=" border text-2xl font-bold w-fit mt-20 p-3 px-6 bg-blue-800 text-white">How Does a Corporate Loan Work</p>
-        <p className="mt-10 text-xl font-normal"> <span className="font-bold text-2xl">Application:</span> Businesses submit a loan application detailing their financial history, plans, and intended
-        use of funds.</p>
-        <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl"> Underwriting: </span>   Lenders assess the borrower’s creditworthiness by evaluating financial statements,
-        cash flow, and collateral.</p>
-        <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl"> Approval:</span>   Based on the borrower’s financial health and risk profile, the lender approves the
-        loan.</p>
- <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl"> Disbursement: </span>Funds are disbursed as a lump sum or in installments based on the loans
- purpose.</p>
- <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl"> Repayment: </span> Borrowers repay the loan through regular installments (principal + interest)
- per the agreed schedule.</p>
-
- <p className="mt-5 text-xl font-normal"> <span className="font-bold text-2xl">  Completion:   </span> Upon full repayment, the loan agreement concludes, and the borrower fulfills their
- obligations.
-</p>
-
-    </div>
-    <Bank/>
-
-    <Form isOpen={isModalOpen} onClose={handleModalToggle} />
-      
-    </div>
-  )
+        
+  );
 };
-CoperateLoan.propTypes = {
+
+const loanTypes = [
+  {
+    icon: FaCalendarCheck,
+    title: "Term Loans",
+    description: "Lump-sum loans repaid over a fixed tenure, ideal for long-term investments like expansion or assets."
+  },
+  {
+    icon: FaCreditCard ,
+    title: "Business Line of Credit",
+    description: "Provides access to funds up to a maximum limit, with interest charged only on the amount utilized."
+  },
+  {
+    icon: FaTools,
+    title: "Equipment Loans",
+    description: "Specifically for purchasing machinery or equipment, often using the equipment as collateral."
+  },
+  {
+    icon: FaBuildingShield,
+    title: "Commercial Mortgages",
+    description: " Used to purchase or refinance business properties, with the property serving as collateral."
+  },
+  {
+    icon: RiMoneyRupeeCircleFill,
+    title: "Working Capital Loans",
+    description: "Short-term loans to manage daily operational costs, providing quick liquidity for smooth cash flow."
+  },
+  {
+    icon: FaShoppingCart,
+    title: "Merchant Cash Advances",
+    description: "Short-term funding repaid through a percentage of future sales proceeds."
+  }
+];
+
+Instance.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default CoperateLoan
+export default Instance;

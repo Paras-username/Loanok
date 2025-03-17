@@ -1,3 +1,4 @@
+import Carousel from "../Carousel/Carousel";
 import Vision from "../Vision/Vision";
 import Works from "../Works/Works";
 
@@ -5,7 +6,7 @@ import Works from "../Works/Works";
 const Homebottom = () => {
   return (
     
-    <div className="p-1 pt-10 sm:p-6 sm:pt-24 bg-gradient-to-r from-[#ffffff] via-white to-[#ffffff]">
+    <div className="p-1 pt-24 mt-16 sm:p-6 sm:pt-20 bg-gradient-to-r from-[#ffffff] via-white to-[#ffffff]">
       <div className="flex justify-center text-3xl sm:text-5xl font-bold text-blue-800 ">
         <div><span className="text-green-700">Key</span> Features</div>
       </div>
@@ -130,6 +131,7 @@ const Homebottom = () => {
 <div className="mt-16">
   <Works/>
   <Vision/>
+  <Carousel/>
 </div>
 
 
