@@ -23,6 +23,10 @@ const connect = async () => {
 
 app.use("/api/rout", loanRoute);
 
+app.get("/getting" , (res,req) => {
+  res.json("hello from backend");
+});
+
 app.listen(8800, ()=>{
   connect()
   console.log("connected to backend");
