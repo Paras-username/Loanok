@@ -4,34 +4,26 @@ import mongoose from "mongoose";
 import cors from "cors";
 import loanRoute from "./routes/loanroutes.js";
 
-dotenv.config();
 const app = express();
+dotenv.config();
 
-// Middleware
+// Middleware to parse JSON
 app.use(express.json());
-app.use(cors({ 
-    origin: ["https://loanokfirm.vercel.app"], // Add more origins if needed
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true 
-}));
+app.use(cors());
 
-// Connect to MongoDB
 const connect = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO, { useNewUrlParser: true, useUnifiedTopology: true });
-    console.log("✅ Connected to MongoDB");
-  } catch (error) {
-    console.error("❌ MongoDB connection error:", error);
+  try{
+    await mongoose.connect(process.env.MONGO);
+    console.log("connected to mongodb");
+  }
+  catch(error){
+    throw error;
   }
 };
-connect();
 
-// Routes
 app.use("/api/rout", loanRoute);
 
-app.get("/getting", (req, res) => {
-  res.json("Hello from backend!");
-});
-
-// 🚀 Export app for Vercel (no app.listen)
-export default app;
+app.listen(8800, ()=>{
+  connect()
+  console.log("connected to backend");
+})
