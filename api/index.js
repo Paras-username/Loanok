@@ -7,27 +7,36 @@ import loanRoute from "./routes/loanroutes.js";
 const app = express();
 dotenv.config();
 
-// Middleware to parse JSON
+// Middleware
 app.use(express.json());
 app.use(cors());
 
+// MongoDB Connection
 const connect = async () => {
-  try{
-    await mongoose.connect(process.env.MONGO);
-    console.log("connected to mongodb");
-  }
-  catch(error){
-    throw error;
+  try {
+    await mongoose.connect(process.env.MONGO, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("MongoDB Connection Error:", error);
   }
 };
 
+// API Routes
 app.use("/api/rout", loanRoute);
-
 app.get("/getting", (req, res) => {
-  res.json("Hello from backend");
+  res.json("Hello from backend part2");
 });
 
-app.listen(8800, ()=>{
-  connect()
-  console.log("connected to backend");
-})
+// Start Server (Use Dynamic Port)
+const PORT = process.env.PORT || 8800;
+connect().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+});
+
+// Export app for Vercel
+export default app;
