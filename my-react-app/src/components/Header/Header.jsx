@@ -611,7 +611,7 @@ const Header = () => {
   );
 
   return (
-    <div className={`sticky top-0 z-50 shadow-md ${isDarkMode ? "bg-gray-900" : "bg-[#FAF3E8]"}`}>
+    <div className={`sticky top-0 z-50 shadow-md ${isDarkMode ? "bg-gray-800" : "bg-[#FAF3E8]"}`}>
     {/* Desktop Menu */}
     <div className="hidden md:flex justify-between items-center py-4 px-4">
       <a href="/"><div
@@ -798,7 +798,7 @@ const Header = () => {
             >
               <div
                 className={`w-4 h-4 rounded-full absolute top-0 left-0 transform transition-all duration-300 ${
-                  isDarkMode ? "translate-x-6 bg-white" : "translate-x-0 bg-gray-900"
+                  isDarkMode ? "translate-x-6 bg-white" : "translate-x-0 bg-gray-800"
                 }`}
               ></div>
             </div>
