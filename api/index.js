@@ -27,7 +27,7 @@ const connect = async () => {
 // API Routes
 app.use("/api/rout", loanRoute);
 app.get("/getting", (req, res) => {
-  res.json("Hello from backend part2");
+  res.json("Hello from backend part3");
 });
 
 // Start Server (Use Dynamic Port)

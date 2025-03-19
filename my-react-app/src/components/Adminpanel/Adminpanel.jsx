@@ -115,7 +115,7 @@ const AdminPanel = () => {
         if (!isAuthenticated || !isAdmin) return; // Prevent fetching if unauthorized
 
         const token = await getAccessTokenSilently(); // Get Auth0 access token
-        const res = await axios.get("http://localhost:8800/api/rout/admin/loans", {
+        const res = await axios.get("https://backendloanok.vercel.app/api/rout/admin/loans", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -141,7 +141,7 @@ const AdminPanel = () => {
     try {
       const token = await getAccessTokenSilently(); // Get Auth0 token
       await axios.put(
-        `http://localhost:8800/api/rout/update/application/${applicationNo}`,
+        `https://backendloanok.vercel.app/api/rout/update/application/${applicationNo}`,
         { status: updatedStatus[applicationNo] },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -149,7 +149,7 @@ const AdminPanel = () => {
       alert("Loan status updated!");
 
       // Refresh list after update
-      const res = await axios.get("http://localhost:8800/api/rout/admin/loans", {
+      const res = await axios.get("https://backendloanok.vercel.app/api/rout/admin/loans", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setLoans(res.data);
