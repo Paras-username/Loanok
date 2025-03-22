@@ -15,9 +15,9 @@ const Calculator = () => {
 
 
   // const [isModalOpen, setIsModalOpen] = useState(false);
-  const [amount, setAmount] = useState(0);
-  const [interest, setInterest] = useState(10);
-  const [tenure, setTenure] = useState(0);
+  const [amount, setAmount] = useState();
+  const [interest, setInterest] = useState(7);
+  const [tenure, setTenure] = useState();
   const [emi, setEmi] = useState(0);
   const [totalInterest, setTotalInterest] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
