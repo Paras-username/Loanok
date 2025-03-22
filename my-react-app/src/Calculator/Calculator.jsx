@@ -137,7 +137,7 @@ const Calculator = () => {
                 type="range"
                 value={amount}
                 onChange={(e) => setAmount(Number(e.target.value))}
-                min="0"
+                min=""
                 max="1000000"
                 step="1000"
                 className="w-full mt-4 range-slider"
