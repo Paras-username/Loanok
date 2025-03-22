@@ -137,7 +137,7 @@ const Calculator = () => {
                 type="range"
                 value={amount}
                 onChange={(e) => setAmount(Number(e.target.value))}
-                min=""
+                min="0"
                 max="1000000"
                 step="1000"
                 className="w-full mt-4 range-slider"
@@ -408,7 +408,7 @@ const Calculator = () => {
       </div>
 
       {/* Modal */}
-      {isModalOpen && <Dataform onClose={handleModalToggle} />}
+      {isModalOpen && <Dataform onClose={handleModalToggle}/>}
     </div>
   );
 };
