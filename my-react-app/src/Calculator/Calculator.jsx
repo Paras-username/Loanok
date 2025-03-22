@@ -140,7 +140,7 @@ const Calculator = () => {
                 min="0"
                 max="1000000"
                 step="1000"
-                className="w-full mt-4 range-slider"
+                className="w-full mt-4 range-slider appearance-none"
                 style={{ accentColor: "#3b82f6" }}
               />
             </div>
