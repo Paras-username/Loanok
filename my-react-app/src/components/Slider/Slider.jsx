@@ -42,7 +42,7 @@ const Slider = () => {
       title: "Credit Card Repayment Loan",
       description:
         "A Credit Card Repayment Loan from LoanOK helps consolidate high credit card debt with quick approval and flexible repayment options, making it easier to manage and regain control of your finances.",
-      image: "https://www.paymeindia.in/blog/wp-content/uploads/2024/01/credit-card.webp",
+      image: "https://www.paymeindia.in/blog/wp-content/uploads/2024/01/credit-card.png",
       link: "/ccrloan",
     },
   ];
