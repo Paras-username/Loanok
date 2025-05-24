@@ -60,7 +60,7 @@
  
 //   <div className="flex-1 flex justify-center">
 //     <img
-//       src="/girlpurple.png"
+//       src="/girlpurple.webp"
 //       alt="Loan Illustration"
 //       className="w-[320px] h-[280px] sm:w-[540px] sm:h-[600px] object-contain rounded-2xl shadow-sm"
 //     />
@@ -139,7 +139,7 @@ const Home = () => {
 
         <div className="flex-1 flex justify-center">
           <img
-            src="/girlpurple.png"
+            src="/girlpurple.webp"
             alt="Loan Illustration"
             className="w-[320px] h-[280px] sm:w-[500px] sm:h-[500px] object-cover rounded-2xl shadow-sm"
           />

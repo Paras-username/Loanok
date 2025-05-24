@@ -97,7 +97,7 @@ function Form({ isOpen, onClose }) {
     className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center mb-10 z-50">
       <div 
       style={{
-        backgroundImage: 'url(/okok2.png)', // Reference image from the public folder
+        backgroundImage: 'url(/okok2.webp)', // Reference image from the public folder
         backgroundPosition: 'center',
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat', // Prevent image repetition

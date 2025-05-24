@@ -89,7 +89,7 @@ const Instance = () => {
               {/* Image Section */}
               <div className="flex-1 flex justify-center items-start">
                 <img
-                  src="housinggirl.png"
+                  src="housinggirl.webp"
                   alt="Housing Loan Illustration"
                   className="w-full max-w-[500px] h-auto rounded-2xl shadow-sm object-contain"
                   loading="lazy"

@@ -26,7 +26,7 @@ const Contactus = () => {
         <button
           onClick={toggleDropdown}
           className="w-[40px] h-[40px] bg-white text-gray-700 shadow-xl rounded-lg border border-gray-300 mt-8 p-0">
-          <img src="/phone.png" alt="Phone" className="w-[40px] h-[40px] p-1" />
+          <img src="/phone.webp" alt="Phone" className="w-[40px] h-[40px] p-1" />
         </button>
       </div>
 

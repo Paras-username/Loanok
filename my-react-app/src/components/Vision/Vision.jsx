@@ -160,7 +160,7 @@ const Vision = () => {
           variants={fadeInUp}
         >
           <img
-            src="/visionpic.png"
+            src="/visionpic.webp"
             alt="Flexible EMIs"
             className="w-full h-full object-cover"
           />

@@ -14,7 +14,7 @@ const Slider = () => {
       title: "MSME Loans",
       description:
         "MSME loans are crucial for fostering entrepreneurship and innovation, which are vital for economic growth. By providing financial assistance, MSME loans help small businesses overcome financial barriers, allowing them to invest in technology, infrastructure, and human resources.",
-      image: "msmepic.png ",
+      image: "msmepic.webp ",
       link: "/msmeloan",
     },
   ];

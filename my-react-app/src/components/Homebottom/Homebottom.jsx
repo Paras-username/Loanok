@@ -18,7 +18,7 @@ const Homebottom = () => {
     {/* Section 1 */}
     <div className="text-center flex flex-col items-center max-w-xs">
       <img
-        src="/person1.png"
+        src="/person1.webp"
         alt="Flexible EMIs"
         className="w-20 h-18 mx-auto"
       />
@@ -31,7 +31,7 @@ const Homebottom = () => {
     {/* Section 2 */}
     <div className="text-center flex flex-col items-center max-w-xs">
       <img
-        src="/tick1.png"
+        src="/tick1.webp"
         alt="Flexible EMIs"
         className="w-16 h-16 mx-auto"
       />
@@ -44,7 +44,7 @@ const Homebottom = () => {
     {/* Section 3 */}
     <div className="text-center flex flex-col items-center max-w-xs">
       <img
-        src="/hand1.png"
+        src="/hand1.webp"
         alt="Fast Approvals"
         className="w-17 h-16 mx-auto"
       />
@@ -57,7 +57,7 @@ const Homebottom = () => {
     {/* Section 4 */}
     <div className="text-center flex flex-col items-center max-w-xs">
       <img
-        src="/money.png"
+        src="/money.webp"
         alt="No Hidden Charges"
         className="w-16 h-16 mx-auto"
       />
@@ -74,7 +74,7 @@ const Homebottom = () => {
     {/* Section 1 */}
     <div className="text-center flex flex-col items-center max-w-xs">
       <img
-        src="/phone.png"
+        src="/phone.webp"
         alt="Loan EMI Calculator"
         className="w-16 h-14 mx-auto"
       />
@@ -87,7 +87,7 @@ const Homebottom = () => {
     {/* Section 2 */}
     <div className="text-center flex flex-col items-center max-w-xs">
       <img
-        src="/clock1.png"
+        src="/clock1.webp"
         alt="24/7 Accessibility"
         className="w-17 h-16 mx-auto"
       />
@@ -100,7 +100,7 @@ const Homebottom = () => {
     {/* Section 3 */}
     <div className="text-center flex flex-col items-center max-w-xs">
       <img
-        src="/security.png"
+        src="/security.webp"
         alt="Safe and Secure"
         className="w-17 h-16 mx-auto"
       />
@@ -113,7 +113,7 @@ const Homebottom = () => {
     {/* Section 4 */}
     <div className="text-center flex flex-col items-center max-w-xs">
       <img
-        src="/support1.png"
+        src="/support1.webp"
         alt="Friendly Customer Support"
         className="w-17 h-16 mx-auto"
       />

@@ -51,7 +51,7 @@ const VehicleInsurance = () => {
                   {/* Image Section */}
                   <div className="flex-1 flex justify-center items-center">
                     <img
-                      src="vehicle.png"
+                      src="vehicle.webp"
                       alt="Personal Loan Illustration"
                       className="w-full max-w-lg lg:max-w-xl h-auto rounded-2xl shadow-sm"
                     />

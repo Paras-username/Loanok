@@ -50,7 +50,7 @@ const LifeInsurance = () => {
                   {/* Image Section */}
                   <div className="flex-1 flex justify-center items-center">
                     <img
-                      src="life.png"
+                      src="life.webp"
                       alt="Personal Loan Illustration"
                       className="w-full max-w-xl lg:max-w-2xl h-auto rounded-2xl shadow-sm"
                     />

@@ -50,7 +50,7 @@ const GenralInsurance = () => {
                   {/* Image Section */}
                   <div className="flex-1 flex justify-center items-center">
                     <img
-                      src="general.png"
+                      src="general.webp"
                       alt="Personal Loan Illustration"
                       className="w-full max-w-lg lg:max-w-2xl h-auto rounded-2xl shadow-sm"
                     />

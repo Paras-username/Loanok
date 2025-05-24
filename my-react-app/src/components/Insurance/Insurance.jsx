@@ -22,7 +22,7 @@ const Insurance = () => {
               Life Covered
             </div>
             <img
-              src="lifelogo.png"
+              src="lifelogo.webp"
               alt="Life Insurance"
               className="absolute -bottom-6 -right-16 w-30 h-30 object-contain"
             />
@@ -37,7 +37,7 @@ const Insurance = () => {
               Shield Your Assets
             </div>
             <img
-              src="generallogo.png"
+              src="generallogo.webp"
               alt="Life Insurance"
               className="absolute -bottom-6 -right-20 w-30 h-30 object-contain"
             />
@@ -51,7 +51,7 @@ const Insurance = () => {
               Care Assured
             </div>
             <img
-              src="healthlogo.png"
+              src="healthlogo.webp"
               alt="Life Insurance"
               className="absolute -bottom-7 -right-20 w-30 h-30 object-contain"
             />
@@ -65,7 +65,7 @@ const Insurance = () => {
               Protect Shelter
             </div>
             <img
-              src="homelogo.png"
+              src="homelogo.webp"
               alt="Life Insurance"
               className="absolute -bottom-3 -right-20 w-26 h-26 object-contain"
             />
@@ -79,7 +79,7 @@ const Insurance = () => {
               Safe Journey
             </div>
             <img
-              src="scooterlogo.png"
+              src="scooterlogo.webp"
               alt="Life Insurance"
               className="absolute -bottom-3 -right-20 w-26 h-26 object-contain"
             />
@@ -188,7 +188,7 @@ const Insurance = () => {
 
     {/* Right Side (Image Container) */}
     <div className="w-full md:w-[50%] h-72 md:h-[650px] rounded-3xl overflow-hidden mt-6 md:mt-0">
-      <img src="offers.png" alt="Offer Image" className="w-full h-full object-cover" />
+      <img src="offers.webp" alt="Offer Image" className="w-full h-full object-cover" />
     </div>
   </div>
 </div>

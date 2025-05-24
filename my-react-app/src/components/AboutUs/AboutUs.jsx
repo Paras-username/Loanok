@@ -31,22 +31,22 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           {[
             {
-              icon: "/Innovation.png",
+              icon: "/Innovation.webp",
               title: "Innovation",
               description: "Ensuring faster loan approvals and improving features based on consumer feedback.",
             },
             {
-              icon: "/trust1.png",
+              icon: "/trust1.webp",
               title: "Trust",
               description: "Transparent loan terms with no hidden charges, supported by customer testimonials.",
             },
             {
-              icon: "/Effi.png",
+              icon: "/Effi.webp",
               title: "Efficiency",
               description: "Fast loan approvals, quick disbursals, and a simple application process.",
             },
             {
-              icon: "/sheild.png",
+              icon: "/sheild.webp",
               title: "Security",
               description: "Strong data protection and regular checks to keep customer information safe.",
             },

@@ -61,22 +61,22 @@ const Works = () => {
         >
           {[
             {
-              icon: "/Login.png",
+              icon: "/Login.webp",
               title: "Step 1: Sign Up & Login",
               description: "Visit the LoanOK website and create an account or log in.",
             },
             {
-              icon: "/calling1.png",
+              icon: "/calling1.webp",
               title: "Step 2: Get Expert Consultation",
               description: "Connect with our loan advisors for personalized guidance.",
             },
             {
-              icon: "/Apply.png",
+              icon: "/Apply.webp",
               title: "Step 3: Apply for a Loan",
               description: "Choose the best loan option and submit your application.",
             },
             {
-              icon: "/Mark.png",
+              icon: "/Mark.webp",
               title: "Step 4: Track Your Application",
               description: "Monitor your loan status with your application number.",
             },

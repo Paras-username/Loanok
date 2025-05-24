@@ -52,7 +52,7 @@ const HealthInsurance = () => {
                   {/* Image Section */}
                   <div className="flex-1 flex justify-center items-center">
                     <img
-                      src="health.png"
+                      src="health.webp"
                       alt="Personal Loan Illustration"
                       className="w-full max-w-xl lg:max-w-2xl h-auto rounded-2xl shadow-sm"
                     />

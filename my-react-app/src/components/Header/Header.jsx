@@ -159,7 +159,7 @@
 //       <div className="hidden md:flex justify-between items-center  py-4 px-4">
 //         <a href="/"><div
 //           className="h-8 w-40 bg-cover bg-center"
-//           style={{ backgroundImage: "url('/loanoklogo.png')" }}
+//           style={{ backgroundImage: "url('/loanoklogo.webp')" }}
 //         ></div></a>
 //         <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-2 rounded-full shadow-lg">
 //           {navItems.map((item) => {
@@ -247,7 +247,7 @@
 //       <div className="md:hidden flex justify-between items-center p-4">
 //         <a href="/"><div
 //           className="h-10 w-40 bg-cover bg-center"
-//           style={{ backgroundImage: "url('/loanoklogo.png')" }}
+//           style={{ backgroundImage: "url('/loanoklogo.webp')" }}
 //         ></div></a>
 //         <button onClick={toggleMobileMenu} className="p-2">
 //           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -616,7 +616,7 @@ const Header = () => {
     <div className="hidden md:flex justify-between items-center py-4 px-4">
       <a href="/"><div
         className="h-8 w-40 bg-cover bg-center"
-        style={{ backgroundImage: "url('/loanoklogo.png')" }}
+        style={{ backgroundImage: "url('/loanoklogo.webp')" }}
       ></div></a>
       
       <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-2 rounded-full shadow-lg">
@@ -711,7 +711,7 @@ const Header = () => {
     <div className="md:hidden flex justify-between items-center p-4">
       <a href="/"><div
         className="h-10 w-40 bg-cover bg-center"
-        style={{ backgroundImage: "url('/loanoklogo.png')" }}
+        style={{ backgroundImage: "url('/loanoklogo.webp')" }}
       ></div></a>
       <button onClick={toggleMobileMenu} className="p-2">
         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

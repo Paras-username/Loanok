@@ -7,21 +7,21 @@ const Slider = () => {
       title: "Instant Personal Loan",
       description:
         "Need money fast? An instant loan from LoanOK is a quick and easy way to access funds, often within minutes. Perfect for urgent financial needs like medical emergencies, home repairs, or unexpected expenses.",
-      image: "Instantnew.png",
+      image: "Instantnew.webp",
       link: "/instance",
     },
     {
       title: "Vehicle Loan",
       description:
         "A vehicle loan lets you borrow funds to purchase a car, motorcycle, or truck, with the vehicle as collateral. Repayments are made in fixed monthly installments over a specified period, offering an affordable way to own a vehicle.",
-      image: "carslider.png",
+      image: "carslider.webp",
       link: "/Vehicle",
     },
     {
       title: "Debt Consolidation Loan",
       description:
         "A debt consolidation loan combines multiple debts into one, simplifying repayments with a single monthly payment. It’s ideal for those with high-interest debts, like credit cards, helping to better manage finances.",
-      image: "debtslider.png",
+      image: "debtslider.webp",
       link: "/dcloan",
     },
     {
@@ -35,14 +35,14 @@ const Slider = () => {
       title: "Gold Loan",
       description:
         "A gold loan is a secured loan where you pledge your gold as collateral for quick funds. It offers lower interest rates, minimal documentation, and flexible repayment options while keeping your gold safe.",
-      image: "goldslider.png",
+      image: "goldslider.webp",
       link: "/goldloan",
     },
     {
       title: "Credit Card Repayment Loan",
       description:
         "A Credit Card Repayment Loan from LoanOK helps consolidate high credit card debt with quick approval and flexible repayment options, making it easier to manage and regain control of your finances.",
-      image: "https://www.paymeindia.in/blog/wp-content/uploads/2024/01/credit-card.png",
+      image: "https://www.paymeindia.in/blog/wp-content/uploads/2024/01/credit-card.webp",
       link: "/ccrloan",
     },
   ];

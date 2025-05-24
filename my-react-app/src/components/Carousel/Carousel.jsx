@@ -1,19 +1,19 @@
 import { motion } from "framer-motion";
 
 const images = [
-  "axis.png",
-  "sbilogo.png",
-  "centralbank.png",
-  "pnb.png",
-  "canara.png",
-  "boi.png",
-  "icici.png",
-  "crgb.png",
-  "kotak.png",
-  "union.png",
-  "uco.png",
-  "idfc.png",
-  "hdfc.png",
+  "axis.webp",
+  "sbilogo.webp",
+  "centralbank.webp",
+  "pnb.webp",
+  "canara.webp",
+  "boi.webp",
+  "icici.webp",
+  "crgb.webp",
+  "kotak.webp",
+  "union.webp",
+  "uco.webp",
+  "idfc.webp",
+  "hdfc.webp",
   "lichfl.webp",
 ];
 

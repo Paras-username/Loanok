@@ -123,7 +123,7 @@ const Goldloan = () => {
             {/* Image Section */}
             <div className="flex-1 flex justify-center">
               <img
-                src="gold.png"
+                src="gold.webp"
                 alt="Vehicle Loan Illustration"
                 className="max-w-full h-auto rounded-2xl shadow-sm"
               />

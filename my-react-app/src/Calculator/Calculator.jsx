@@ -7,6 +7,7 @@ const Calculator = () => {
 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
 
  const handleModalToggle = () => {
     setIsModalOpen(!isModalOpen);
@@ -120,6 +121,23 @@ const Calculator = () => {
           {/* Left Side - Inputs */}
           <div className="space-y-8">
             {/* Loan Amount */}
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Choose Your Loan Type</label>
+              <select
+            value={selectedOption}
+            onChange={(e) => setSelectedOption(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
+              style={{ accentColor: "#3b82f6" }}
+            >       
+                <option value="" >Select an option</option>
+                <option value="option1">Personal Loan</option>
+                <option value="option2">Buisness Loan</option>
+                <option value="option3">Housing Loan</option>
+                <option value="option4">Education Loan</option>
+                  </select>
+
+            </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Loan Amount (₹)</label>
               <div className="relative">

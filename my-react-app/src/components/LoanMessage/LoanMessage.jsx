@@ -22,7 +22,7 @@ const LoanMessage = () => {
 <div
   className="fixed z-50 left-0  bottom-0 w-[110px] h-[90px] sm:w-[130px] sm:h-[110px] bg-transparent md:w-[150px] md:h-[130px]"
   style={{
-    backgroundImage: "url('/emoji.png')",
+    backgroundImage: "url('/emoji.webp')",
     backgroundSize: "cover",
   
     // left: "260px", // Custom right positioning
