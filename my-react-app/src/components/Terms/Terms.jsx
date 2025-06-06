@@ -258,6 +258,84 @@ const Terms = () => {
   </li>
 </ul>
 
+
+<p className="text-lg sm:text-xl font-bold mt-8 text-gray-800">
+  14. Processing Fee Structure & Terms and Conditions
+</p>
+
+<div className="mt-4 text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed space-y-4">
+  <p>
+    At LoanOK Connect, we are committed to maintaining full transparency, ethical business practices, and customer-first service throughout the loan facilitation process.
+    As a loan consultancy and intermediary, we assist borrowers in availing various types of loans through our trusted partner banks and NBFCs.
+    Our role includes document verification, eligibility evaluation, consultation, loan structuring, file submission, and continuous coordination until the loan is sanctioned and disbursed.
+    For these end-to-end services, we charge a Processing Fee, which is collected only after the loan has been approved and is ready for disbursal.
+  </p>
+
+  <p>Our processing charges vary depending on the type of loan:</p>
+  <ul className="list-disc pl-6">
+    <li>Business Loans – 3% of the disbursed amount</li>
+    <li>Mortgage Loans – 2.5% of the sanctioned amount</li>
+    <li>Home Loans (₹40 lakhs to ₹1 crore) – 2% of the disbursed amount</li>
+    <li>Education Loans – 2% of the disbursed amount</li>
+    <li>Personal Loans – 3% of the disbursed amount</li>
+    <li>Vehicle Loans – 2% of the disbursed loan amount</li>
+  </ul>
+
+  <p>
+    These charges are strictly applicable only after successful document verification, KYC clearance, income validation, and final loan approval by the lender.
+    No fee is collected during initial inquiry, consultation, or document submission stages.
+  </p>
+
+  <p className="font-bold">Terms & Conditions</p>
+
+  <p className="font-semibold">Processing Fee Collection:</p>
+  <ul className="list-disc pl-6">
+    <li>The processing fee is charged only after successful completion of customer verification, documentation, and once the loan is ready for disbursement.</li>
+    <li>The customer is required to make the processing fee payment before the final disbursement of the loan amount.</li>
+    <li>The disbursement process will be initiated only after confirmation of full processing fee payment through approved channels.</li>
+  </ul>
+
+  <p className="font-semibold">Mode of Payment:</p>
+  <ul className="list-disc pl-6">
+    <li>UPI Transfer</li>
+    <li>Bank Account Transfer (All payment details will be shared directly with the customer through official communication.)</li>
+  </ul>
+
+  <p className="font-semibold">Refund Policy:</p>
+  <ul className="list-disc pl-6">
+    <li>If, for any reason, the loan amount is not disbursed or the process is stopped from the lender’s end, the processing fee will be refunded in full to the customer within 7 working days.</li>
+    <li>No refund will be applicable after successful loan disbursement.</li>
+  </ul>
+
+  <p className="font-semibold">Transparency:</p>
+  <p>
+    At Loan OK Connect, we follow a strict policy of transparency to ensure our customers are fully informed and confident throughout the loan process.
+    Before the processing fee is paid, the customer will be provided with a complete and itemized breakup of all applicable charges, clearly stating:
+  </p>
+  <ul className="list-disc pl-6">
+    <li>Type of loan applied for</li>
+    <li>Sanctioned loan amount (as approved by the lender)</li>
+    <li>Applicable processing fee percentage</li>
+    <li>Total fee amount to be paid</li>
+    <li>Mode of payment (UPI or bank transfer)</li>
+    <li>Timeline for disbursement</li>
+    <li>Any other applicable service charges (if applicable)</li>
+  </ul>
+
+  <p>
+    LoanOK Connect does not guarantee loan approval or disbursement.
+    Final approval rests entirely with the respective bank or NBFC, based on their internal eligibility criteria.
+    Our processing fee strictly covers our intermediary services and does not influence the lender’s decision.
+    We maintain the highest standards of compliance and expect the same from applicants—any attempt to submit fraudulent documents, misrepresentation, or unethical conduct may lead to immediate termination of our services, and in such cases, the processing fee will not be refunded.
+  </p>
+
+  <p>
+    At LoanOK, we believe in building trust, offering the best possible loan solutions at minimal interest rates, and guiding our customers throughout the journey—from consultation to disbursal.
+    With us, you’re not just getting a service provider; you’re choosing a reliable financial partner dedicated to your success.
+  </p>
+</div>
+
+
 <p className="text-lg sm:text-xl font-bold mt-8 text-gray-800">
 USER COMMENTS, FEEDBACK, AND OTHER SUBMISSIONS
           </p>
