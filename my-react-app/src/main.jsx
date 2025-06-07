@@ -32,6 +32,10 @@ import Goldloan from './components/Goldloan/Goldloan.jsx';
 import LoanStatus from './components/LoanStatus/LoanStatus.jsx';
 import Dataform from './components/Dataform/Dataform.jsx';
 import Adminpanel from './components/Adminpanel/Adminpanel.jsx';
+import Log from './components/Auth/Log.jsx';
+import Register from './components/Auth/Register.jsx';
+import ForgotPassword from './components/forgotpassword/ForgotPassword.jsx';
+import ResetPassword from './components/resetpassword/ResetPassword.jsx';
 
 const router = createBrowserRouter([
   {
@@ -68,6 +72,13 @@ const router = createBrowserRouter([
 
     ],
   },
+
+  {path: "login", element: <Log/>},
+    {path: "register", element: <Register />},
+    {path:"/forgot-password" , element: <ForgotPassword/>},
+    {path: "/reset-password/:token" , element: <ResetPassword/>}
+
+
 ]);
 
 createRoot(document.getElementById('root')).render(
