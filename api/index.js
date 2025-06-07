@@ -64,7 +64,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://loanokfirm.vercel.app"], // ✅ Update with your actual domain
+  origin: ["http://localhost:5173", "https://www.loanok.in"], // ✅ Update with your actual domain
   credentials: true
 }));
 

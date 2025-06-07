@@ -87,7 +87,7 @@ export const forgotPassword = async (req, res, next) => {
   html: `
     <p>You requested for password reset</p>
     <p>Click this link to reset your password: 
-      <a href="https://loanokfirm.vercel.app/reset-password/${token}">
+      <a href="https://www.loanok.in/reset-password/${token}">
         Reset Password
       </a>
     </p>
