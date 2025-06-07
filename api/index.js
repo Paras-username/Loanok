@@ -83,6 +83,13 @@ const connect = async () => {
 app.use("/api/rout", loanRoute);
 app.use("/api/auth", authRoute);
 
+
+// Error handling middleware (add here)
+app.use((err, req, res, next) => {
+  console.error(err.stack); // Logs full error stack in your server logs
+  res.status(err.status || 500).json({ error: err.message || 'Internal Server Error' });
+});
+
 app.get("/getting", (req, res) => {
   res.json("Hello from backend part3");
 });

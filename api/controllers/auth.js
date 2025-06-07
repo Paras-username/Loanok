@@ -81,18 +81,17 @@ export const forgotPassword = async (req, res, next) => {
     });
 
     const mailOptions = {
-  to: user.email,
-  from: process.env.GMAIL_USER,
-  subject: "Password Reset Link",
-  html: `
-    <p>You requested for password reset</p>
-    <p>Click this link to reset your password: 
-      <a href="https://www.loanok.in/reset-password/${token}">
-        Reset Password
-      </a>
-    </p>
-  `,
-};
+      to: user.email,
+      from: process.env.GMAIL_USER,
+      subject: "Password Reset Link",
+      html: `
+        <p>You requested for password reset</p>
+        <p>Click this link to reset your password: 
+          <a href="https://loanokfirm.vercel.app//reset-password/${token}">
+            Reset Password
+          </a>
+        </p>`,
+    };
 
     await transporter.sendMail(mailOptions);
 
