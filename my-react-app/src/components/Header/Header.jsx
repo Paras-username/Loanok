@@ -675,6 +675,9 @@ const Header = () => {
             onMouseEnter={() => setDropdownLearn(true)}
             onMouseLeave={() => setDropdownLearn(false)}
           >
+                <NavLink to="/blogs" className="block text-sm px-4 py-1 rounded-lg hover:text-blue-500 dark:hover:bg-[#FAF3E8]">
+              Blogs
+            </NavLink>
             <NavLink to="/privacy" className="block text-sm px-4 py-1 rounded-lg hover:text-blue-500 dark:hover:bg-[#FAF3E8]">
               Privacy Policy
             </NavLink>
@@ -771,6 +774,13 @@ const Header = () => {
             </div>
             {isDropdownLearn && (
               <div className="pl-4">
+                <NavLink
+                  to="/blogs"
+                  className="block hover:text-blue-500"
+                  onClick={toggleMobileMenu}
+                >
+                  Blogs
+                </NavLink>
                 <NavLink
                   to="/privacy"
                   className="block hover:text-blue-500"
