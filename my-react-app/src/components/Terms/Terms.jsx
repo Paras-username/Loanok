@@ -259,7 +259,7 @@ const Terms = () => {
 </ul>
 
 
-<p className="text-lg sm:text-xl font-bold mt-8 text-gray-800">
+{/* <p className="text-lg sm:text-xl font-bold mt-8 text-gray-800">
   14. Processing Fee Structure & Terms and Conditions
 </p>
 
@@ -333,7 +333,7 @@ const Terms = () => {
     At LoanOK, we believe in building trust, offering the best possible loan solutions at minimal interest rates, and guiding our customers throughout the journey—from consultation to disbursal.
     With us, you’re not just getting a service provider; you’re choosing a reliable financial partner dedicated to your success.
   </p>
-</div>
+</div> */}
 
 
 <p className="text-lg sm:text-xl font-bold mt-8 text-gray-800">
