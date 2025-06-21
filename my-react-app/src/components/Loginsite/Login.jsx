@@ -21,7 +21,7 @@ const Login = () => {
         // Login Button
         <button
           onClick={loginWithRedirect}
-          className="px-5 py-2 rounded-full bg-blue-700 text-white font-semibold shadow-md hover:bg-blue-600"
+          className="px-5 py-2 rounded-full bg-green-700 text-white font-semibold shadow-md hover:bg-blue-600"
         >
           Login
         </button>

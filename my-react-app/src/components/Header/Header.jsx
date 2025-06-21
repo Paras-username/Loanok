@@ -611,7 +611,7 @@ const Header = () => {
   );
 
   return (
-    <div className={`sticky top-0 z-50 shadow-md ${isDarkMode ? "bg-gray-800" : "bg-[#FAF3E8]"}`}>
+    <div className={`sticky top-0 z-50 shadow-md ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
     {/* Desktop Menu */}
     <div className="hidden md:flex justify-between items-center py-4 px-4">
       <a href="/"><div
