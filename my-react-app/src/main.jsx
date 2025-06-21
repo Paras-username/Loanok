@@ -32,6 +32,7 @@ import Goldloan from './components/Goldloan/Goldloan.jsx';
 import LoanStatus from './components/LoanStatus/LoanStatus.jsx';
 import Dataform from './components/Dataform/Dataform.jsx';
 import Adminpanel from './components/Adminpanel/Adminpanel.jsx';
+import Blog from './components/Blogs/Blogs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -64,7 +65,8 @@ const router = createBrowserRouter([
       {path: "goldloan" , element: <Goldloan/>},
       {path: "loanstatus" , element: <LoanStatus/>},
       {path: "dataform" , element: <Dataform/>},
-      {path: "adminpanel" , element: <Adminpanel/>}
+      {path: "adminpanel" , element: <Adminpanel/>},
+      {path: "blogs" , element: <Blog/>}
 
     ],
   },
