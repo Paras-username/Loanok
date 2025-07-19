@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import loanRoute from "./routes/loanroutes.js";
+import carrerroutes from "./routes/carrerroutes.js";
 
 const app = express();
 dotenv.config();
@@ -26,6 +27,7 @@ const connect = async () => {
 
 // API Routes
 app.use("/api/rout", loanRoute);
+app.use("/api/carrer", carrerroutes);
 app.get("/getting", (req, res) => {
   res.json("Hello from backend part3");
 });
