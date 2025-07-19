@@ -262,7 +262,7 @@ const CareerForm = () => {
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    await axios.post("http://localhost:8800/api/carrer", formData);
+    await axios.post("https://backendloanok.vercel.app/api/carrer", formData);
     setMessage("✅ Application submitted successfully!");
 
     // Clear form
