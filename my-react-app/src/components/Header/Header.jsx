@@ -387,7 +387,8 @@ const Header = () => {
     { name: "Loan", url: "#", icon: Briefcase, dropdown: true },
     { name: "Insurance", url: "/insurance", icon: User },
     { name: "EMI Calculator", url: "/calculator", icon: FileText },
-    { name: "About Us", url: "/aboutus", icon: User },
+    { name: "Career", url: "/careersportal", icon: FileText },
+    // { name: "About Us", url: "/aboutus", icon: User },
     { name: "Learn", url: "#", icon: BookOpen, dropdown: true },
   ];
 
@@ -678,6 +679,9 @@ const Header = () => {
                 <NavLink to="/blogs" className="block text-sm px-4 py-1 rounded-lg hover:text-blue-500 dark:hover:bg-[#FAF3E8]">
               Blogs
             </NavLink>
+            <NavLink to="/aboutus" className="block text-sm px-4 py-1 rounded-lg hover:text-blue-500 dark:hover:bg-[#FAF3E8]">
+              About Us
+            </NavLink>
             <NavLink to="/privacy" className="block text-sm px-4 py-1 rounded-lg hover:text-blue-500 dark:hover:bg-[#FAF3E8]">
               Privacy Policy
             </NavLink>
@@ -758,11 +762,11 @@ const Header = () => {
           </NavLink>
 
           <NavLink
-            to="/aboutus"
+            to="/careersportal"
             className="hover:text-blue-800"
             onClick={toggleMobileMenu}
           >
-            About Us
+            Career
           </NavLink>
 
           <div>
@@ -780,6 +784,13 @@ const Header = () => {
                   onClick={toggleMobileMenu}
                 >
                   Blogs
+                </NavLink>
+                <NavLink
+                  to="/aboutus"
+                  className="block hover:text-blue-500"
+                  onClick={toggleMobileMenu}
+                >
+                About Us
                 </NavLink>
                 <NavLink
                   to="/privacy"

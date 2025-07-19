@@ -33,6 +33,9 @@ import LoanStatus from './components/LoanStatus/LoanStatus.jsx';
 import Dataform from './components/Dataform/Dataform.jsx';
 import Adminpanel from './components/Adminpanel/Adminpanel.jsx';
 import Blog from './components/Blogs/Blogs.jsx';
+import CareerForm from './components/CareerForm/CareerForm.jsx';
+import CareerAdminPanel from './components/CareerAdminPanel/CareerAdminPanel.jsx';
+import CareerPortal from './components/Careerportal/CareerPortal.jsx';
 
 const router = createBrowserRouter([
   {
@@ -66,7 +69,10 @@ const router = createBrowserRouter([
       {path: "loanstatus" , element: <LoanStatus/>},
       {path: "dataform" , element: <Dataform/>},
       {path: "adminpanel" , element: <Adminpanel/>},
-      {path: "blogs" , element: <Blog/>}
+      {path: "blogs" , element: <Blog/>},
+      {path: "careersportal" , element: <CareerPortal/>},
+      {path: "careerform", element: <CareerForm/>},
+      {path: "adminpanel/career", element: <CareerAdminPanel/>},
 
     ],
   },

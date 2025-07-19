@@ -95,55 +95,56 @@ const Home = () => {
   return (
     /* Hero section with full‑width background image */
     <div className="min-h-[550px] w-full bg-[url('/round.jpg')] bg-cover bg-center bg-no-repeat">
-      <div className="w-full max-w-[1350px] mx-auto flex flex-col md:flex-row items-center px-2 py-12 md:gap-2">
-        {/* LEFT — text */}
-        <div className="w-full md:w-1/2 space-y-4 text-center md:text-left">
-          <WordRotate
-            words={["Trusted Partners", "Simple Process", "Quick Loans"]}
-            className="text-xl sm:text-4xl font-bold text-[#5da881]"
-          />
-          <h1 className="text-3xl sm:text-5xl font-bold text-black">
-            Loans Made Easy
-          </h1>
-          <h1 className="text-3xl sm:text-5xl font-bold text-green-700">
-            Approval Made Fast
-          </h1>
-          <p className="text-gray-700 max-w-md mx-auto md:mx-0">
-            Transparent loans, competitive rates, expert guidance. Quick,
-            reliable solutions for all your financial goals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <button
-              onClick={handleModalToggle}
-              className="bg-green-700 text-white font-bold px-6 py-3 hover:scale-105"
-            >
-              Apply Now!
-            </button>
-            <button
-              onClick={handleNavigate}
-              className="bg-[#e4f3e0] font-bold px-6 py-3 hover:scale-105"
-            >
-              How it works
-            </button>
-          </div>
-        </div>
-
-        {/* RIGHT — video */}
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          <video
-            src="/homemp4.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-[280px] sm:h-[380px] object-contain"
-          />
-        </div>
+  <div className="w-full max-w-[1350px] mx-auto flex flex-col md:flex-row items-center px-4 py-12 md:gap-2">
+    {/* LEFT — text */}
+    <div className="w-full md:w-1/2 space-y-4 text-center md:text-left">
+      <WordRotate
+        words={["Trusted Partners", "Simple Process", "Quick Loans"]}
+        className="text-lg sm:text-4xl font-bold text-[#5da881]"
+      />
+      <h1 className="text-2xl sm:text-5xl font-bold text-black leading-snug">
+        Loans Made Easy
+      </h1>
+      <h1 className="text-2xl sm:text-5xl font-bold text-green-700 leading-snug">
+        Approval Made Fast
+      </h1>
+      <p className="text-gray-700 max-w-sm mx-auto md:mx-0 text-sm sm:text-base">
+        Transparent loans, competitive rates, expert guidance. Quick,
+        reliable solutions for all your financial goals.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
+        <button
+          onClick={handleModalToggle}
+          className="bg-green-700 text-white font-bold px-5 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded hover:scale-105 transition-transform"
+        >
+          Apply Now!
+        </button>
+        <button
+          onClick={handleNavigate}
+          className="bg-[#e4f3e0] font-bold px-5 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded hover:scale-105 transition-transform"
+        >
+          How it works
+        </button>
       </div>
-
-      {/* Modal Form */}
-      {isModalOpen && <Dataform onClose={handleModalToggle} />}
     </div>
+
+    {/* RIGHT — video */}
+    <div className="w-full md:w-1/2 flex justify-center items-center mt-8 md:mt-0">
+      <video
+        src="/homemp4.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-[220px] sm:h-[380px] object-contain"
+      />
+    </div>
+  </div>
+
+  {/* Modal Form */}
+  {isModalOpen && <Dataform onClose={handleModalToggle} />}
+</div>
+
   );
 };
 
