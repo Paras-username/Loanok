@@ -218,6 +218,7 @@ const CareerForm = () => {
     "Google Ads Campaign Intern",
     "Marketing Intern",
     "Sales Intern",
+    "HR Intern",
     "Social Media Content Creator Intern",
     "Social Media Handler Intern",
     "Business Development Intern",
@@ -226,7 +227,8 @@ const CareerForm = () => {
     "Operations Handler Intern",
     "Digital Marketing Intern",
     "Content Creation Intern",
-    "Financial Accountant Intern (for ITR and financial tasks)"
+    "Financial Accountant Intern (for ITR and financial tasks)",
+    "Others"
   ];
 
   const handleChange = (e) => {
@@ -278,7 +280,7 @@ const CareerForm = () => {
     });
 
     // Show alert
-    alert("Application submitted successfully!");
+    alert("Application submitted successfully! We will get back to you soon.");
 
     // Redirect after 1.5 seconds
     setTimeout(() => {
