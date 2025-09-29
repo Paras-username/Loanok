@@ -11,7 +11,7 @@ const LoanMessage = () => {
         </div>
         <div className="border-2 border-green-500 rounded-3xl px-3 py-1 text-xs sm:text-lg font-medium text-green-500 flex items-center shadow-md mt-2 md:mt-0">
           <FontAwesomeIcon icon={faWhatsapp} className="mr-2" />
-          <a href="https://wa.me/918109952379" className="block md:inline">
+          <a href="https://wa.me/919893250977" className="block md:inline">
             +91 8109952379
           </a>
         </div>

@@ -36,6 +36,16 @@ import Blog from './components/Blogs/Blogs.jsx';
 import CareerForm from './components/CareerForm/CareerForm.jsx';
 import CareerAdminPanel from './components/CareerAdminPanel/CareerAdminPanel.jsx';
 import CareerPortal from './components/Careerportal/CareerPortal.jsx';
+// import Centraladminpanel from './components/CentralAdminPanel/Centraladminpanel.jsx';
+import Log from './components/Auth/Log.jsx';
+import Register from './components/Auth/Register.jsx';
+// import CibilForm from './components/CibilForm/CibilForm.jsx';
+// import CibilAdmin from './components/CibilAdmin/CibilAdmin.jsx';
+// import ReviewsSection from './components/ReviewsSection/ReviewsSection.jsx';
+// import Adminreviews from './components/Adminreviews/Adminreviews.jsx';
+// import LeadForm from './components/LeadForm/LeadForm.jsx';
+// import DocumentUploadForm from './components/DocumentUploadForm/DocumentUploadForm.jsx';
+// import LeadAdminPanel from './components/LeadAdminPanel/LeadAdminPanel.jsx';
 
 const router = createBrowserRouter([
   {
@@ -73,6 +83,19 @@ const router = createBrowserRouter([
       {path: "careersportal" , element: <CareerPortal/>},
       {path: "careerform", element: <CareerForm/>},
       {path: "adminpanel/career", element: <CareerAdminPanel/>},
+      // {path: "CentralAdminPanel", element: <Centraladminpanel/>},
+      // {path: "cibil_score_checker", element: <CibilForm/>},
+      // {path: "cibil_admin", element: <CibilAdmin/>},
+      // {path: "customer_reviews", element: <ReviewsSection/>},
+      // {path: "reviews_admin", element: <Adminreviews/>},
+      // {path: "Application_Form", element: <LeadForm/>},
+      // {path: "document_upload", element: <DocumentUploadForm/>},
+      // {path: "lead_admin", element: <LeadAdminPanel/>},
+
+
+      
+      {path: "login" , element: <Log/>},
+      {path : "register", element: <Register/>},
 
     ],
   },

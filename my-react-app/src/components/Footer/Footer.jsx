@@ -91,7 +91,7 @@ const Footerupdate = () => {
                 support@loanok.com
               </a>
             </li>
-            <li className="hover:text-white hover:underline transition duration-200 cursor-pointer">+91-8109952379</li>
+            <li className="hover:text-white hover:underline transition duration-200 cursor-pointer">+91-9893250977</li>
           </ul>
         </div>
 

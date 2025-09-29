@@ -4,6 +4,7 @@ import LoanMessage from "./components/LoanMessage/LoanMessage";
 import Contactus from "./components/Contactus/Contactus"; // Adjust the path accordingly
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import ReviewsSection from "./components/ReviewsSection/ReviewsSection";
 
 const Layout = () => {
   const location = useLocation(); // Get the current route location
@@ -18,6 +19,7 @@ const Layout = () => {
       <Contactus />
       <Outlet />
       <LoanMessage />
+      {/* <ReviewsSection/> */}
       <Footer />
     </>
   );
