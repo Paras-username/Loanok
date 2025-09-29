@@ -53,7 +53,7 @@ const Contactus = () => {
             >
             <FontAwesomeIcon icon={faPhone} size="sm" />
             </i>
-            <span className="ml-4 font-medium">+91-8109952379</span>
+            <span className="ml-4 font-medium">+91-9893250977</span>
           </a>
 
           <a
